@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9104332984105356504}
   - component: {fileID: -8839387582641647672}
+  - component: {fileID: 2749368714287183324}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -44,8 +45,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _oName: Skeleton
-  _oSprite: {fileID: 0}
+  _oSprite: {fileID: 21300000, guid: b623990a8ea9aee4a971f4d884d0a5fa, type: 3}
   _atk: 1
   _hp: 1
-  OnEntryEvents: []
+  objType: 1
+  maxHp: 0
+  OnEntryEvents:
+  - {fileID: 2749368714287183324}
   OnExitEvents: []
+--- !u!114 &2749368714287183324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6182475065458288281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3417f37a069ced438707bb0abc88b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

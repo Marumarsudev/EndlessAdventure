@@ -9,22 +9,91 @@ public class Object : MonoBehaviour
 
     public TextMeshProUGUI text;
 
+    public SpriteRenderer sprite;
+
+    private bool dead = false;
+
     void Start()
     {
-        text.text = scriptable.oName + "\n"+scriptable.atk.ToString()+"/"+scriptable.hp.ToString();
+        if(scriptable)
+            scriptable.Setup();
+
+        UpdateText();
     }
 
-    public void CallEntryEvents()
+    private void UpdateText()
+    {
+        if(scriptable.objType == Type.player)
+        {
+            text.text = scriptable.oName + "\n"+scriptable.hp.ToString()+"/"+scriptable.maxHp.ToString();
+        }
+        else if(scriptable.objType == Type.enemy)
+        {
+            text.text = scriptable.oName + "\n"+scriptable.hp.ToString();
+        }
+        else if (scriptable.objType == Type.pot)
+        {
+            text.text = scriptable.oName + "\n+"+scriptable.atk.ToString();
+        }
+        else if (scriptable.objType == Type.pois)
+        {
+            text.text = scriptable.oName + "\n-"+scriptable.atk.ToString();
+        }
+    }
+
+    public void ChangeSprite()
+    {
+        sprite.sprite = scriptable.oSprite;
+    }
+
+    public void Damage(int amount)
+    {
+        amount = Mathf.Abs(amount);
+        scriptable.hp -= amount;
+        if(scriptable.hp <= 0)
+        {
+            dead = true;
+            Debug.Log(scriptable.oName + " died.");
+            DestroyImmediate(this.gameObject);
+        }
+        UpdateText();
+    }
+
+    public void Heal(int amount)
+    {
+        Debug.Log(amount);
+        scriptable.hp += amount;
+        if(scriptable.hp > scriptable.maxHp)
+            scriptable.hp = scriptable.maxHp;
+        UpdateText();
+    }
+
+    public void HealStr(int amount)
+    {
+        scriptable.atk += amount;
+        UpdateText();
+    }
+
+    public void DamageStr(int amount)
+    {
+        amount = Mathf.Abs(amount);
+        scriptable.atk -= amount;
+        if(scriptable.atk < 0)
+            scriptable.atk = 0;
+        UpdateText();
+    }
+
+    public void CallEntryEvents(Object target, Object self)
     {
         scriptable.OnEntryEvents.ForEach(e => {
-            e.CallEvent();
+            e.CallEvent(target, self);
         });
     }
 
-    public void CallExitEvents()
+    public void CallExitEvents(Object target, Object self)
     {
         scriptable.OnExitEvents.ForEach(e => {
-            e.CallEvent();
+            e.CallEvent(target, self);
         });
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Event : MonoBehaviour
 {
-    public void CallEvent()
+    public virtual void CallEvent(Object target, Object self)
     {
-        Debug.Log("Default event called");
+        Debug.Log("Event target: " + target.scriptable.oName);
     }
 }
