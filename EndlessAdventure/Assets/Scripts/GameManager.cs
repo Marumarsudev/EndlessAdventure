@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pixelplacement;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -118,11 +119,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void PlayerMove()
+    private void PlayerMove(Vector3 inputPos)
     {
-        if(Input.GetMouseButtonDown(0) && canMove)
+        if(canMove)
         {
-            RaycastHit2D hit = Physics2D.Raycast(mainCam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            RaycastHit2D hit = Physics2D.Raycast(mainCam.ScreenToWorldPoint(inputPos), Vector2.zero);
  
             if(hit.collider != null && hit.collider.GetComponent<Object>() && player.transform.position.y + cardDistance >= hit.collider.transform.position.y && player.transform.position.y < hit.collider.transform.position.y && Mathf.Abs(hit.collider.transform.position.x - player.transform.position.x) <= cardDistance)
             {
@@ -132,13 +133,16 @@ public class GameManager : MonoBehaviour
                 CreateTiles(1, y);
                 int tempscore = targetObject.scriptable.hp;
                 Tween.Position(player.transform, targetpos, 0.5f, 0, Tween.EaseIn, Tween.LoopType.None, null, () => {
-                    oPlayer.CallEntryEvents(targetObject, oPlayer);
                     targetObject.CallEntryEvents(oPlayer, targetObject);
-                    canMove = true;
-                    if(oPlayer.scriptable.hp > 0)
+                    if(oPlayer)
                     {
-                        score += tempscore;
-                        scoreText.text = "Score : " + score.ToString();
+                        oPlayer.CallEntryEvents(targetObject, oPlayer);
+                        canMove = true;
+                        if(oPlayer.scriptable.hp > 0)
+                        {
+                            score += tempscore;
+                            scoreText.text = "Score : " + score.ToString();
+                        }
                     }
                     Tween.Position(mainCam.transform, new Vector3(0, player.transform.position.y + 3.5f, -10), 0.5f, 0);
                     if(y >= 10 && y % 2 == 0)
@@ -152,6 +156,25 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        PlayerMove();
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (oPlayer)
+            {
+                PlayerMove(Input.mousePosition);
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
+        else if(Input.touchCount > 0)
+        {
+            if(oPlayer)
+                PlayerMove(Input.GetTouch(0).position);
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
     }
 }

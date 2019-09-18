@@ -22,7 +22,7 @@ public class Object : MonoBehaviour
 
         if(scriptable.objType == Type.player)
         {
-            sprite.sortingOrder = 2;
+            sprite.sortingOrder = 5;
         }
         else if (scriptable.objType == Type.enemy)
         {
