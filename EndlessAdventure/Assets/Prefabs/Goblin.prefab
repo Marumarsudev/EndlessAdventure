@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _oName: Goblin
-  _oSprite: {fileID: 21300000, guid: 8c359667ef0e27c4a901e0231e2f5b93, type: 3}
+  _oSprite: {fileID: 21300000, guid: a5462c313ad25824aaf4098396fcd656, type: 3}
   _atk: 3
   _hp: 3
   objType: 1

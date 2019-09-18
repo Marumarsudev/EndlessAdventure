@@ -45,8 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _oName: Small HP Pot
-  _oSprite: {fileID: 7581609467746351499, guid: d03397a67a7f74a4bbf2ffd8cdc0df0c,
-    type: 3}
+  _oSprite: {fileID: 21300000, guid: 2aac40409c14ec14eb767211d034b41f, type: 3}
   _atk: 3
   _hp: 0
   objType: 2

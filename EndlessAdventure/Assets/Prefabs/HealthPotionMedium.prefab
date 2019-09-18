@@ -45,8 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _oName: Medium HP Pot
-  _oSprite: {fileID: 1371628056344953650, guid: d03397a67a7f74a4bbf2ffd8cdc0df0c,
-    type: 3}
+  _oSprite: {fileID: 21300000, guid: 2aac40409c14ec14eb767211d034b41f, type: 3}
   _atk: 5
   _hp: 0
   objType: 2

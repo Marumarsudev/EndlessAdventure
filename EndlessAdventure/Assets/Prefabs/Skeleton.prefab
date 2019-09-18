@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _oName: Skeleton
-  _oSprite: {fileID: 21300000, guid: b623990a8ea9aee4a971f4d884d0a5fa, type: 3}
+  _oSprite: {fileID: 21300000, guid: c2d5e6f9172311041b103f7dee6a4969, type: 3}
   _atk: 1
   _hp: 1
   objType: 1

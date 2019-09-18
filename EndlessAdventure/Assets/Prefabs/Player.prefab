@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _oName: Player
-  _oSprite: {fileID: 21300000, guid: df1c1a5239f88fa4b8d595b1a3036e52, type: 3}
+  _oSprite: {fileID: 21300000, guid: 4d0f1653f17cd8249914e46caef35e8d, type: 3}
   _atk: 999
   _hp: 10
   objType: 0

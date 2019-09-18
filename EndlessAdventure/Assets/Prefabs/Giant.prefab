@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _oName: Giant
-  _oSprite: {fileID: 21300000, guid: 890cc7b39158af9419913ff6b4f08438, type: 3}
+  _oSprite: {fileID: 21300000, guid: fb8fac92124ea914ab6e8ec0b950321e, type: 3}
   _atk: 4
   _hp: 4
   objType: 1

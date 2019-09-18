@@ -7,9 +7,11 @@ public class Object : MonoBehaviour
 {
     public ObjectScriptable scriptable;
 
-    public TextMeshProUGUI text;
+    public TextMeshPro text;
 
     public SpriteRenderer sprite;
+    public SpriteRenderer border;
+
 
     private bool dead = false;
 
@@ -18,6 +20,24 @@ public class Object : MonoBehaviour
         if(scriptable)
             scriptable.Setup();
 
+        if(scriptable.objType == Type.player)
+        {
+            sprite.sortingOrder = 2;
+        }
+        else if (scriptable.objType == Type.enemy)
+        {
+            sprite.sortingOrder = 0;
+            border.color = Color.red;
+        }
+        else if (scriptable.objType == Type.pot)
+        {
+            sprite.sortingOrder = 0;
+            border.color = Color.green;
+        }
+
+        text.sortingOrder = sprite.sortingOrder + 1;
+        border.sortingOrder = sprite.sortingOrder + 2;
+
         UpdateText();
     }
 
@@ -25,19 +45,19 @@ public class Object : MonoBehaviour
     {
         if(scriptable.objType == Type.player)
         {
-            text.text = scriptable.oName + "\n"+scriptable.hp.ToString()+"/"+scriptable.maxHp.ToString();
+            text.text = /*scriptable.oName + "\n"+*/scriptable.hp.ToString()/*+"/"+scriptable.maxHp.ToString()*/;
         }
         else if(scriptable.objType == Type.enemy)
         {
-            text.text = scriptable.oName + "\n"+scriptable.hp.ToString();
+            text.text = /*scriptable.oName + "\n"*/scriptable.hp.ToString();
         }
         else if (scriptable.objType == Type.pot)
         {
-            text.text = scriptable.oName + "\n+"+scriptable.atk.ToString();
+            text.text = /*scriptable.oName + "\n*/"+"+scriptable.atk.ToString();
         }
         else if (scriptable.objType == Type.pois)
         {
-            text.text = scriptable.oName + "\n-"+scriptable.atk.ToString();
+            text.text = /*scriptable.oName + "\n*/"-"+scriptable.atk.ToString();
         }
     }
 

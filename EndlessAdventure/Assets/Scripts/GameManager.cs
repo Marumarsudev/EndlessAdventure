@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pixelplacement;
-using System.Linq;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public float yOffset = -2f;
     public float cardDistance = 1.5f;
     public float itemcount = 0.15f;
+
+    public TextMeshPro scoreText;
 
     public Camera mainCam;
     public Canvas canvas;
@@ -32,6 +34,10 @@ public class GameManager : MonoBehaviour
     private Object targetObject;
 
     private List<Object> objects = new List<Object>();
+
+    private bool canMove = true;
+
+    private int score = 0;
 
     int y = 0;
 
@@ -112,20 +118,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Update()
+    private void PlayerMove()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && canMove)
         {
             RaycastHit2D hit = Physics2D.Raycast(mainCam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
  
-            if(hit.collider != null && hit.collider.GetComponent<Object>() && player.transform.position.y + cardDistance >= hit.collider.transform.position.y && player.transform.position.y < hit.collider.transform.position.y && Mathf.Abs(player.transform.position.x) + Mathf.Abs(hit.collider.transform.position.x) <= cardDistance*2)
+            if(hit.collider != null && hit.collider.GetComponent<Object>() && player.transform.position.y + cardDistance >= hit.collider.transform.position.y && player.transform.position.y < hit.collider.transform.position.y && Mathf.Abs(hit.collider.transform.position.x - player.transform.position.x) <= cardDistance)
             {
+                canMove = false;
                 targetObject = hit.collider.GetComponent<Object>();
                 Vector3 targetpos = targetObject.transform.position;
-                oPlayer.CallEntryEvents(targetObject, oPlayer);
-                targetObject.CallEntryEvents(oPlayer, targetObject);
                 CreateTiles(1, y);
+                int tempscore = targetObject.scriptable.hp;
                 Tween.Position(player.transform, targetpos, 0.5f, 0, Tween.EaseIn, Tween.LoopType.None, null, () => {
+                    oPlayer.CallEntryEvents(targetObject, oPlayer);
+                    targetObject.CallEntryEvents(oPlayer, targetObject);
+                    canMove = true;
+                    if(oPlayer.scriptable.hp > 0)
+                    {
+                        score += tempscore;
+                        scoreText.text = "Score : " + score.ToString();
+                    }
                     Tween.Position(mainCam.transform, new Vector3(0, player.transform.position.y + 3.5f, -10), 0.5f, 0);
                     if(y >= 10 && y % 2 == 0)
                     {
@@ -134,5 +148,10 @@ public class GameManager : MonoBehaviour
                 });
             }
         }
+    }
+
+    void Update()
+    {
+        PlayerMove();
     }
 }

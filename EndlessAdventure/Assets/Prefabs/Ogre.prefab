@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _oName: Ogre
-  _oSprite: {fileID: 21300000, guid: ad5050367b878944d9f140e21a9c81cb, type: 3}
+  _oSprite: {fileID: 21300000, guid: a85f373776147e841ba6bdcc211418c9, type: 3}
   _atk: 7
   _hp: 7
   objType: 1
