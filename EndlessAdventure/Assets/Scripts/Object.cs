@@ -10,15 +10,22 @@ public class Object : MonoBehaviour
     public TextMeshPro text;
 
     public SpriteRenderer sprite;
-    public SpriteRenderer border;
 
+    public Animator animator;
 
     private bool dead = false;
 
     void Start()
     {
         if(scriptable)
+        {
             scriptable.Setup();
+
+            if(scriptable.GetComponent<Animator>())
+            {
+                animator.runtimeAnimatorController = scriptable.GetComponent<Animator>().runtimeAnimatorController;
+            }
+        }
 
         if(scriptable.objType == Type.player)
         {
@@ -27,16 +34,13 @@ public class Object : MonoBehaviour
         else if (scriptable.objType == Type.enemy)
         {
             sprite.sortingOrder = 0;
-            border.color = Color.red;
         }
         else if (scriptable.objType == Type.pot)
         {
             sprite.sortingOrder = 0;
-            border.color = Color.green;
         }
 
         text.sortingOrder = sprite.sortingOrder + 1;
-        border.sortingOrder = sprite.sortingOrder + 2;
 
         UpdateText();
     }

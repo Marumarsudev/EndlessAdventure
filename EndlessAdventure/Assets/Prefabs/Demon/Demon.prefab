@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9104332984105356504}
   - component: {fileID: -8839387582641647672}
-  - component: {fileID: -4818647260266345588}
+  - component: {fileID: 8879158604954312820}
+  - component: {fileID: 2992730368201000882}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Demon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,16 +45,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565ad79a0454b6e4d9a966839b16bbdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _oName: Player
-  _oSprite: {fileID: 21300000, guid: 4d0f1653f17cd8249914e46caef35e8d, type: 3}
-  _atk: 999
-  _hp: 10
-  objType: 0
-  maxHp: 20
+  _oName: Demon
+  _oSprite: {fileID: 21300000, guid: 9f85cb7a5752e7149a5da0c6af098497, type: 3}
+  _atk: 9
+  _hp: 9
+  objType: 1
+  maxHp: 0
   OnEntryEvents:
-  - {fileID: -4818647260266345588}
+  - {fileID: 8879158604954312820}
   OnExitEvents: []
---- !u!114 &-4818647260266345588
+--- !u!114 &8879158604954312820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,3 +66,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3417f37a069ced438707bb0abc88b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2992730368201000882
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6182475065458288281}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 395097c36f05e114ca598dd9d65a5c3b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

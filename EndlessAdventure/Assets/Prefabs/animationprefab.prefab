@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 5781187082113078620}
   - component: {fileID: 6595522759976113171}
   m_Layer: 0
-  m_Name: WorldObject
+  m_Name: animationprefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,7 +347,7 @@ Animator:
   m_GameObject: {fileID: 7969126634060865805}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0561a678e0448604388ce528174a7766, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
