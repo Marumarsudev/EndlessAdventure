@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 1312738640918164103}
   - component: {fileID: 1312738640918164100}
   - component: {fileID: 1312738640918164123}
-  - component: {fileID: 1312738640918164101}
   - component: {fileID: -1050732909884578507}
-  - component: {fileID: -3584295591020798193}
+  - component: {fileID: 6499824382556969277}
+  - component: {fileID: 3479357060982414249}
   m_Layer: 0
-  m_Name: Giant
+  m_Name: Health Bottle Medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e4da21ca71a1443479e9912fa7b027a2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.05548787, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,28 +99,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oType: 1
-  oName: Giant
+  oName: Health Bottle
   nameText: {fileID: 1312738640945170140}
   lane: 0
   EntryEvents:
-  - {fileID: -3584295591020798193}
---- !u!114 &1312738640918164101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312738640918164102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fccd766e4ccd524bbad3e8bd0c7496a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 5
-  startingHealth: 5
-  curHealth: 0
-  deathEvents: []
-  statusText: {fileID: 1312738640955622956}
+  - {fileID: 6499824382556969277}
+  - {fileID: 3479357060982414249}
 --- !u!61 &-1050732909884578507
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3333334, y: 2}
   m_EdgeRadius: 0
---- !u!114 &-3584295591020798193
+--- !u!114 &6499824382556969277
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,7 +140,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1312738640918164102}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3417f37a069ced438707bb0abc88b04, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cf2ad6295560624e96c6e6d2df0bf31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healAmount: 5
+  statusText: {fileID: 1312738640955622956}
+--- !u!114 &3479357060982414249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312738640918164102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2991e43528494cb46a478272f74d96ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1312738640945170142
