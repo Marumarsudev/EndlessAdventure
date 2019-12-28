@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pixelplacement;
-using Pixelplacement.TweenSystem;
 using UnityEngine.SceneManagement;
+using TMPro;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
 
     private bool pStart = false;
 
+    private int score = 0;
+    public TextMeshProUGUI scoretext;
+    public TextMeshProUGUI DiedText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +51,7 @@ public class GameManager : MonoBehaviour
         playerBase.Attack += EnemyDamaged;
         playerBase.AttackEnd += CombatEnd;
         CreateCards(5);
+        UpdateUI();
     }
 
     private void CreateCards(int rows)
@@ -125,6 +130,10 @@ public class GameManager : MonoBehaviour
         if(player.GetComponent<HealthComponent>().curHealth <= 0 || !player)
         {
             canMove = true;
+            DiedText.gameObject.SetActive(true);
+            DiedText.DOFade(0, 0);
+            DiedText.DOFontSize(150, 5);
+            DiedText.DOFade(255, 5);
         }
     }
 
@@ -143,7 +152,17 @@ public class GameManager : MonoBehaviour
     private void EnemyDamaged()
     {
         playerBase.CallEvents(curTarget.GetComponent<BaseObject>());
+        if(curTarget.GetComponent<HealthComponent>().curHealth <= 0)
+        {
+            score += curTarget.GetComponent<HealthComponent>().maxHealth;
+            UpdateUI();
+        }
         curTarget.GetComponent<Animator>().SetTrigger("Damage");
+    }
+
+    private void UpdateUI()
+    {
+        scoretext.text = "Score: " + score.ToString();
     }
 
     private void CombatEnd()
@@ -152,8 +171,9 @@ public class GameManager : MonoBehaviour
         {
             if(curTarget.GetComponent<HealthComponent>().curHealth < 0)
             {
-                Tween.Position(player.transform, new Vector3(xOffset * (int)playerBase.lane, player.transform.position.y, 0), 0.5f, 0, null, Tween.LoopType.None, () => {playerAnimator.SetBool("Moving", true);}, () => 
-                {
+                player.transform.DOMove(new Vector3(xOffset * (int)playerBase.lane, player.transform.position.y, 0), 0.5f, false)
+                .OnStart(() => {playerAnimator.SetBool("Moving", true);})
+                .OnComplete(() => {
                     playerAnimator.SetBool("Moving", false);
                     canMove = true;
                     MurderLineDestroy();
@@ -162,12 +182,13 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Tween.Position(player.transform, new Vector3(xOffset * (int)playerBase.lane, player.transform.position.y, 0), 0.5f, 0, null, Tween.LoopType.None, () => {playerAnimator.SetBool("Moving", true);}, () => 
-            {
-                playerAnimator.SetBool("Moving", false);
-                canMove = true;
-                MurderLineDestroy();
-            });
+            player.transform.DOMove(new Vector3(xOffset * (int)playerBase.lane, player.transform.position.y, 0), 0.5f, false)
+                .OnStart(() => {playerAnimator.SetBool("Moving", true);})
+                .OnComplete(() => {
+                    playerAnimator.SetBool("Moving", false);
+                    canMove = true;
+                    MurderLineDestroy();
+                });
         }
     }
 
@@ -215,14 +236,17 @@ public class GameManager : MonoBehaviour
 
         playerBase.lane = (Lane)lane;
 #region BG Movement
-        Tween.Position(BackGround1.transform, new Vector3(BackGround1.transform.position.x, BackGround1.transform.position.y - yOffset, 0), 0.5f, 0, null, Tween.LoopType.None, null, () => {
+        BackGround1.transform.DOMove(new Vector3(BackGround1.transform.position.x, BackGround1.transform.position.y - yOffset, 0), 0.5f)
+        .OnComplete(() => {
             if(BackGround1.transform.position.y <= -10f)
             {
                 Debug.Log("BG BG BG");
                 BackGround1.transform.position = new Vector3(0,BackGround2.transform.position.y + 12.5f,0);
             }
         });
-        Tween.Position(BackGround2.transform, new Vector3(BackGround2.transform.position.x, BackGround2.transform.position.y - yOffset, 0), 0.5f, 0, null, Tween.LoopType.None, null, () => {
+
+        BackGround2.transform.DOMove(new Vector3(BackGround2.transform.position.x, BackGround2.transform.position.y - yOffset, 0), 0.5f)
+        .OnComplete(() => {
             if(BackGround2.transform.position.y <= -10f)
             {
                 Debug.Log("BG BG BG");
@@ -230,8 +254,10 @@ public class GameManager : MonoBehaviour
             }
         });
 #endregion
-        Tween.Position(player.transform, new Vector3(xOffset * lane + spacing, player.transform.position.y, 0), 0.5f, 0, null, Tween.LoopType.None, () => {playerAnimator.SetBool("Moving", true);}, () => 
-        {
+
+        player.transform.DOMove(new Vector3(xOffset * lane + spacing, player.transform.position.y, 0), 0.5f)
+        .OnStart(() => {playerAnimator.SetBool("Moving", true);})
+        .OnComplete(() => {
             playerAnimator.SetBool("Moving", false);
             if(curTarget.GetComponent<SpriteRenderer>().flipX && !pStart)
             {
@@ -248,7 +274,7 @@ public class GameManager : MonoBehaviour
         {
             try
             {
-                o.GetComponent<BaseObject>().tween = Tween.Position(o.transform, new Vector3(o.transform.position.x, o.transform.position.y - yOffset , 0), 0.5f, 0);
+                o.transform.DOMove(new Vector3(o.transform.position.x, o.transform.position.y - yOffset , 0), 0.5f);
             }
             catch
             {
@@ -265,7 +291,6 @@ public class GameManager : MonoBehaviour
         List<Collider2D> result = new List<Collider2D>();
         Physics2D.OverlapCollider(MurderLine, new ContactFilter2D().NoFilter(), result);
         result.ForEach(c => {
-            c.GetComponent<BaseObject>().tween.Cancel();
             cards.Remove(c.gameObject);
             Destroy(c.gameObject);
         });

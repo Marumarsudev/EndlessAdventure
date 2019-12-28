@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Pixelplacement;
-using Pixelplacement.TweenSystem;
 
 public enum Type
 {
@@ -31,8 +29,6 @@ public class BaseObject : MonoBehaviour
     
     public event AnimationAction AttackEnd;
     public event AnimationAction Attacked;
-
-    public TweenBase tween = null;
 
     public List<Event> EntryEvents = new List<Event>();
     public List<Event> EntryAnimationEvents = new List<Event>();
