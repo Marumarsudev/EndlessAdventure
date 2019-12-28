@@ -271,39 +271,58 @@ public class GameManager : MonoBehaviour
         });
     }
 
+    private void CheckInput(Vector3 inputPos)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(inputPos), Vector2.zero);
+ 
+        if(hit.collider != null)
+        {
+            int dist = (int)hit.collider.GetComponent<BaseObject>().lane - (int)playerBase.lane;
+            int dir = dist;
+            dist = Mathf.Abs(dist);
+            float yDist = hit.collider.transform.position.y - player.transform.position.y;
+            yDist = Mathf.Abs(yDist);
+            Debug.Log(yDist);
+            if(dist >= 0 && dist <= 1 && yDist <= 2.5f && yDist >= 2f)
+            {
+                if(dir <= 0)
+                {
+                    player.GetComponent<SpriteRenderer>().flipX = true;
+                }
+                else
+                {
+                    player.GetComponent<SpriteRenderer>().flipX = false;
+                }
+                SwitchTarget(hit.collider.gameObject);
+                MoveCards((int)hit.collider.GetComponent<BaseObject>().lane, dir, hit.collider.gameObject);
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(Input.GetMouseButtonDown(0) && canMove && player != null)
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
- 
-            if(hit.collider != null)
-            {
-                int dist = (int)hit.collider.GetComponent<BaseObject>().lane - (int)playerBase.lane;
-                int dir = dist;
-                dist = Mathf.Abs(dist);
-                float yDist = hit.collider.transform.position.y - player.transform.position.y;
-                yDist = Mathf.Abs(yDist);
-                Debug.Log(yDist);
-                if(dist >= 0 && dist <= 1 && yDist <= 2.5f && yDist >= 2f)
-                {
-                    if(dir <= 0)
-                    {
-                        player.GetComponent<SpriteRenderer>().flipX = true;
-                    }
-                    else
-                    {
-                        player.GetComponent<SpriteRenderer>().flipX = false;
-                    }
-                    SwitchTarget(hit.collider.gameObject);
-                    MoveCards((int)hit.collider.GetComponent<BaseObject>().lane, dir, hit.collider.gameObject);
-                }
-            }
+            CheckInput(Input.mousePosition);
         }
         else if (Input.GetMouseButtonDown(0) && player == null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if(Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Ended && canMove && player != null)
+            {
+                CheckInput(touch.position);
+            }
+            else if (touch.phase == TouchPhase.Ended && player == null)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
     }
 
