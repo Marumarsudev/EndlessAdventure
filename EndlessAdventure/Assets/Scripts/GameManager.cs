@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
 
     private float itemChance = 0.10f;
 
+    private float difficulty = 0.00f;
+
     private bool pStart = false;
 
     private int score = 0;
@@ -56,6 +58,9 @@ public class GameManager : MonoBehaviour
 
     private void CreateCards(int rows)
     {
+        difficulty += 0.01f;
+        if (difficulty >= 0.35f)
+            difficulty = 0.35f;
         for (int i = 0; i < rows; i++)
         {
             if(rowCount == 10) // Spwan Bossss!!!
@@ -77,9 +82,9 @@ public class GameManager : MonoBehaviour
                     {
                         itemChance += 0.02f;
                         rand = Random.Range(0f, 1f);
-                        if(rand > 0.88f)
+                        if(rand > 0.88f - difficulty)
                             temp = Instantiate(EnemiesH[Random.Range(0, EnemiesH.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
-                        else if(rand > 0.44f)
+                        else if(rand > 0.44f - difficulty)
                             temp = Instantiate(EnemiesM[Random.Range(0, EnemiesM.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
                         else
                             temp = Instantiate(EnemiesE[Random.Range(0, EnemiesE.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
@@ -129,11 +134,13 @@ public class GameManager : MonoBehaviour
         curTarget.GetComponent<BaseObject>().CallEvents(playerBase);
         if(player.GetComponent<HealthComponent>().curHealth <= 0 || !player)
         {
-            canMove = true;
             DiedText.gameObject.SetActive(true);
             DiedText.DOFade(0, 0);
-            DiedText.DOFontSize(150, 5);
-            DiedText.DOFade(255, 5);
+            DiedText.DOFontSize(150, 2.5f)
+            .OnComplete(() => {
+                canMove = true;
+            });
+            DiedText.DOFade(255, 2.5f);
         }
     }
 
@@ -238,19 +245,19 @@ public class GameManager : MonoBehaviour
 #region BG Movement
         BackGround1.transform.DOMove(new Vector3(BackGround1.transform.position.x, BackGround1.transform.position.y - yOffset, 0), 0.5f)
         .OnComplete(() => {
-            if(BackGround1.transform.position.y <= -10f)
+            if(BackGround1.transform.position.y <= -11f)
             {
                 Debug.Log("BG BG BG");
-                BackGround1.transform.position = new Vector3(0,BackGround2.transform.position.y + 12.5f,0);
+                BackGround1.transform.position = new Vector3(0,BackGround2.transform.position.y + 13.75f,0);
             }
         });
 
         BackGround2.transform.DOMove(new Vector3(BackGround2.transform.position.x, BackGround2.transform.position.y - yOffset, 0), 0.5f)
         .OnComplete(() => {
-            if(BackGround2.transform.position.y <= -10f)
+            if(BackGround2.transform.position.y <= -11f)
             {
                 Debug.Log("BG BG BG");
-                BackGround2.transform.position = new Vector3(0,BackGround1.transform.position.y + 12.5f,0);
+                BackGround2.transform.position = new Vector3(0,BackGround1.transform.position.y + 13.75f,0);
             }
         });
 #endregion
@@ -308,7 +315,7 @@ public class GameManager : MonoBehaviour
             float yDist = hit.collider.transform.position.y - player.transform.position.y;
             yDist = Mathf.Abs(yDist);
             Debug.Log(yDist);
-            if(dist >= 0 && dist <= 1 && yDist <= 2.5f && yDist >= 2f)
+            if(dist >= 0 && dist <= 1 && yDist <= 2.5f && yDist >= 2f && hit.collider.transform.position.y > player.transform.position.y)
             {
                 if(dir <= 0)
                 {
@@ -327,7 +334,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && canMove && player != null)
+        if(Input.GetMouseButtonDown(0) && canMove && player != null && player.GetComponent<HealthComponent>().curHealth > 0)
         {
             CheckInput(Input.mousePosition);
         }
@@ -340,11 +347,11 @@ public class GameManager : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
 
-            if (touch.phase == TouchPhase.Ended && canMove && player != null)
+            if (touch.phase == TouchPhase.Began && canMove && player != null && player.GetComponent<HealthComponent>().curHealth > 0)
             {
                 CheckInput(touch.position);
             }
-            else if (touch.phase == TouchPhase.Ended && player == null)
+            else if (touch.phase == TouchPhase.Began && player == null)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
