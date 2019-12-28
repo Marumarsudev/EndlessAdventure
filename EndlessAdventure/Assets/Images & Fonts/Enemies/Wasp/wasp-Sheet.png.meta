@@ -1,0 +1,763 @@
+fileFormatVersion: 2
+guid: 91f05a256358fcb439e3bbae3bf854fc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5925977206639492605
+    second: wasp-Sheet_0
+  - first:
+      213: 3665916122855595991
+    second: wasp-Sheet_1
+  - first:
+      213: -7169500907906562578
+    second: wasp-Sheet_2
+  - first:
+      213: 7603999334659331673
+    second: wasp-Sheet_3
+  - first:
+      213: 5562499186976664260
+    second: wasp-Sheet_4
+  - first:
+      213: -6359227699582350296
+    second: wasp-Sheet_5
+  - first:
+      213: -7373663607710542365
+    second: wasp-Sheet_6
+  - first:
+      213: -3629726898999330782
+    second: wasp-Sheet_7
+  - first:
+      213: -1022823665092165370
+    second: wasp-Sheet_8
+  - first:
+      213: 1573701767876078426
+    second: wasp-Sheet_9
+  - first:
+      213: 107019601357231713
+    second: wasp-Sheet_10
+  - first:
+      213: 7398932382100883293
+    second: wasp-Sheet_11
+  - first:
+      213: 4409653517751273369
+    second: wasp-Sheet_12
+  - first:
+      213: 4184703399111585058
+    second: wasp-Sheet_13
+  - first:
+      213: -1014772360299351126
+    second: wasp-Sheet_14
+  - first:
+      213: 2220322179702678484
+    second: wasp-Sheet_15
+  - first:
+      213: -3905780405894731026
+    second: wasp-Sheet_16
+  - first:
+      213: -5124494833527646768
+    second: wasp-Sheet_17
+  - first:
+      213: 410254182680999942
+    second: wasp-Sheet_18
+  - first:
+      213: -942201165765687559
+    second: wasp-Sheet_19
+  - first:
+      213: 6572869606090131960
+    second: wasp-Sheet_20
+  - first:
+      213: 8461701522691570505
+    second: wasp-Sheet_21
+  - first:
+      213: -8188308344641848559
+    second: wasp-Sheet_22
+  - first:
+      213: -3065383023523446808
+    second: wasp-Sheet_23
+  - first:
+      213: -6041349403399586111
+    second: wasp-Sheet_24
+  - first:
+      213: 249848803906153273
+    second: wasp-Sheet_25
+  - first:
+      213: -7559467424314169471
+    second: wasp-Sheet_26
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: wasp-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 159
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb6e2f7215386145bc1222e92e35968
+      internalID: 5925977206639492605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 159
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16fe3b46fceaa5943aa6763eab613988
+      internalID: 3665916122855595991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 159
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea96b6f6fb69964c8814338c08ad3a9
+      internalID: -7169500907906562578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 159
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aaf1415f8c49784b8305bfab53224d3
+      internalID: 7603999334659331673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 159
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 424d3756d2647dc4c8526d7e661a0441
+      internalID: 5562499186976664260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 159
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8313befa61b7cfc479e4466683d93de6
+      internalID: -6359227699582350296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 159
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 466c107a31e12ee4b833bc5dd756e49a
+      internalID: -7373663607710542365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 106
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115d2ccf8739ce842806558953023aaa
+      internalID: -3629726898999330782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 106
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0e3ee00287ffe4cad5634bb64e67c5
+      internalID: -1022823665092165370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 106
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f972572c3b1c14f8c3b7682c3d9215
+      internalID: 1573701767876078426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 106
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b05a54017d7a1419f94bb42b9f9fe5
+      internalID: 107019601357231713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 106
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547215085289cbf4199c64e75633b5cf
+      internalID: 7398932382100883293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 106
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 297e15eae59a6a84da44f8969c6db9c3
+      internalID: 4409653517751273369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 106
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9fb38b1cc68280459637cf935aa5a51
+      internalID: 4184703399111585058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 53
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d62f474007c6a4db3ea95768901419
+      internalID: -1014772360299351126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 53
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56bc3e730d2261a4dae62603d34a51a9
+      internalID: 2220322179702678484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 53
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e10a37eea2dd93549a16274b9efb2341
+      internalID: -3905780405894731026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 53
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b46c1fe52d5bf4c8c3777f3bfd18bd
+      internalID: -5124494833527646768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 53
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 563f527774cc8754cb6be01c899024b7
+      internalID: 410254182680999942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 53
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91e7256f1169c7c42a0d22b1095f7506
+      internalID: -942201165765687559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 53
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ebfe23479021674da1b6c0bc766d8fc
+      internalID: 6572869606090131960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1826ca0d76f7648a41219eff21aaf0
+      internalID: 8461701522691570505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b8e71f96b93c534487e4af9f495ada7
+      internalID: -8188308344641848559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb44f497046a8e458a4c93dd3d2477e
+      internalID: -3065383023523446808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 0
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7063df047e430d4fbe5a33069148160
+      internalID: -6041349403399586111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c6f3f3abb9ce147af4f5e128057a6c
+      internalID: 249848803906153273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasp-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0be262094f45c4b9769a9811d54f71
+      internalID: -7559467424314169471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

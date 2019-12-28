@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class DamageEventPlayer : Event
 {
+    public int damage = 0;
+
+    public void SetDamage(int dmg)
+    {
+        damage = dmg;
+    }
+
     public override void CallEvent(BaseObject target)
     {
         try
         {
-            target.GetComponent<HealthComponent>().TakeDamage(GetComponent<HealthComponent>().curHealth, GetComponent<BaseObject>());
+            target.GetComponent<HealthComponent>().TakeDamage(damage, GetComponent<BaseObject>());
         }
         catch
         {

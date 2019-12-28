@@ -7,11 +7,11 @@ public class HealEvent : Event
 {
     public int healAmount;
 
-    public TextMeshProUGUI statusText;
+    public TextMeshPro statusText;
 
     private void Start()
     {
-        statusText.text = healAmount.ToString();
+        statusText.text = "+"+healAmount.ToString();
     }
 
     public override void CallEvent(BaseObject target)

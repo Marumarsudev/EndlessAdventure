@@ -1,0 +1,907 @@
+fileFormatVersion: 2
+guid: 22ea33a0c84502549b8c783702255411
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2129226990181028383
+    second: djinn-bandit-Sheet_0
+  - first:
+      213: -7795091527722754766
+    second: djinn-bandit-Sheet_1
+  - first:
+      213: 1397514467058576159
+    second: djinn-bandit-Sheet_2
+  - first:
+      213: -5993950309962182942
+    second: djinn-bandit-Sheet_3
+  - first:
+      213: -3200317441781545331
+    second: djinn-bandit-Sheet_4
+  - first:
+      213: -4894810059880293139
+    second: djinn-bandit-Sheet_5
+  - first:
+      213: -1785549869269236194
+    second: djinn-bandit-Sheet_6
+  - first:
+      213: -2927999500580226897
+    second: djinn-bandit-Sheet_7
+  - first:
+      213: -4784436342650356164
+    second: djinn-bandit-Sheet_8
+  - first:
+      213: -4728072818411869095
+    second: djinn-bandit-Sheet_9
+  - first:
+      213: 4927904707085452032
+    second: djinn-bandit-Sheet_10
+  - first:
+      213: -6157531084986521247
+    second: djinn-bandit-Sheet_11
+  - first:
+      213: 7974622905285698296
+    second: djinn-bandit-Sheet_12
+  - first:
+      213: 3909187230081363892
+    second: djinn-bandit-Sheet_13
+  - first:
+      213: 5601265936737543588
+    second: djinn-bandit-Sheet_14
+  - first:
+      213: -7158323540703697209
+    second: djinn-bandit-Sheet_15
+  - first:
+      213: 8381587364860635457
+    second: djinn-bandit-Sheet_16
+  - first:
+      213: 9067964776106291785
+    second: djinn-bandit-Sheet_17
+  - first:
+      213: 9026398738008055459
+    second: djinn-bandit-Sheet_18
+  - first:
+      213: -4108386542305422243
+    second: djinn-bandit-Sheet_19
+  - first:
+      213: -2774594875776237456
+    second: djinn-bandit-Sheet_20
+  - first:
+      213: 646097362146336256
+    second: djinn-bandit-Sheet_21
+  - first:
+      213: 6277642052473766754
+    second: djinn-bandit-Sheet_22
+  - first:
+      213: 3745204572518441217
+    second: djinn-bandit-Sheet_23
+  - first:
+      213: -7935256419955109275
+    second: djinn-bandit-Sheet_24
+  - first:
+      213: 7170667065304768716
+    second: djinn-bandit-Sheet_25
+  - first:
+      213: -1620923672831274812
+    second: djinn-bandit-Sheet_26
+  - first:
+      213: 7488485303555642195
+    second: djinn-bandit-Sheet_27
+  - first:
+      213: 5688928703474122619
+    second: djinn-bandit-Sheet_28
+  - first:
+      213: -2334403847408143352
+    second: djinn-bandit-Sheet_29
+  - first:
+      213: 3907369699191611468
+    second: djinn-bandit-Sheet_30
+  - first:
+      213: -3788203195336896086
+    second: djinn-bandit-Sheet_31
+  - first:
+      213: 5968873597208196506
+    second: djinn-bandit-Sheet_32
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd0faf551cba3b34e966eae27d3601c8
+      internalID: -2129226990181028383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 210
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6cc1ffa44e80046aadf8c77a482973
+      internalID: -7795091527722754766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 210
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e161dbbc97eac8f4ca788cb202b88836
+      internalID: 1397514467058576159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 210
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36dd22254b6005941bf8ba92f83777a2
+      internalID: -5993950309962182942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 210
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c571afd905a6d45beeca34db6c70fc
+      internalID: -3200317441781545331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 210
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c0cb5fc318c6794aa99c3dbcdcfaaaa
+      internalID: -4894810059880293139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 168
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec408aa1fac9ed4f8a7b989058d3005
+      internalID: -1785549869269236194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 168
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0c864f77bb2af4090438962cec335b
+      internalID: -2927999500580226897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 168
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d29f4d6edae3bd5489d2beefa0885281
+      internalID: -4784436342650356164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 168
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1561dc0c6315e044ab995e29feee110
+      internalID: -4728072818411869095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 168
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62bf10918190ed4469d306354eeafa59
+      internalID: 4927904707085452032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 168
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb98baa98187d0429d716796cf6a0d4
+      internalID: -6157531084986521247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 126
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb23fc67b25bb9a4181e2f3343897cdb
+      internalID: 7974622905285698296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 126
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577f39c39da7cbc499da2f20dcad4f7e
+      internalID: 3909187230081363892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 126
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae7fcf36ebd9c1c45817b59355a43246
+      internalID: 5601265936737543588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 126
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f49c5c5163dd644b96ac874865483e
+      internalID: -7158323540703697209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 126
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0516f13aeff4c684688bc67cf682bc20
+      internalID: 8381587364860635457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 126
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4844c9fd4b3ffb64ca7dcfad6c436e1c
+      internalID: 9067964776106291785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e111fb549e088647b3ad8e6fb5a8d9e
+      internalID: 9026398738008055459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 84
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9248a7e09f023a48bd413632e079906
+      internalID: -4108386542305422243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 84
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d178f8d2a5495fb4a92ba7c51557a2b6
+      internalID: -2774594875776237456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 84
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c08ccdf4ec03842b4b7a6b2e8cd0dd
+      internalID: 646097362146336256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 84
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ba9aefb652870046a46b1402e21637f
+      internalID: 6277642052473766754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 84
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af8285f484f96e44b7f30b11b2318d2
+      internalID: 3745204572518441217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 42
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27bf1395118229744bf49769a45665dd
+      internalID: -7935256419955109275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 42
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1ee22e4b87cb4469e19cae44521f2a
+      internalID: 7170667065304768716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 42
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9708045ae933774da79f55db6b3ee84
+      internalID: -1620923672831274812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 42
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e32d0df27bbb747806316fbe6196a0
+      internalID: 7488485303555642195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 42
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 593ac85d4d791644ba50e1f137f6077e
+      internalID: 5688928703474122619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 42
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83c4259bc81d404f9b27e18fb839eb5
+      internalID: -2334403847408143352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bffa29e6e61e7ca4e9ac5d4c8a693192
+      internalID: 3907369699191611468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36813ea0d681a404fb24729a4a4ca744
+      internalID: -3788203195336896086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: djinn-bandit-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e8eab649ba6164a911404ad8dbe171
+      internalID: 5968873597208196506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

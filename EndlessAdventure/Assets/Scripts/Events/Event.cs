@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Event : MonoBehaviour
 {
-    public virtual void CallEvent(BaseObject target)
+    public virtual void CallEvent(BaseObject target = null)
     {
         Debug.Log($"this is the default event sent from {GetComponent<BaseObject>().oName} to {target.oName}.");
     }

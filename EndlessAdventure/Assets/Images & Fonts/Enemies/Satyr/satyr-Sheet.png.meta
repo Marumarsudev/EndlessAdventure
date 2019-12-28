@@ -1,0 +1,931 @@
+fileFormatVersion: 2
+guid: 984735bd855a3c4418bd44b9a53a404e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5810546318280948410
+    second: satyr-Sheet_0
+  - first:
+      213: 3538600779889645633
+    second: satyr-Sheet_1
+  - first:
+      213: 5972640947450538140
+    second: satyr-Sheet_2
+  - first:
+      213: 3625921613320813194
+    second: satyr-Sheet_3
+  - first:
+      213: 416278759348026670
+    second: satyr-Sheet_4
+  - first:
+      213: 2834178288588296462
+    second: satyr-Sheet_5
+  - first:
+      213: -4343868435699055271
+    second: satyr-Sheet_6
+  - first:
+      213: -2535206180567118510
+    second: satyr-Sheet_7
+  - first:
+      213: 5986724221350705459
+    second: satyr-Sheet_8
+  - first:
+      213: -8529195420775277096
+    second: satyr-Sheet_9
+  - first:
+      213: -1735295731611331518
+    second: satyr-Sheet_10
+  - first:
+      213: 3140411426866899370
+    second: satyr-Sheet_11
+  - first:
+      213: 4346690959149735221
+    second: satyr-Sheet_12
+  - first:
+      213: 3381486124959585740
+    second: satyr-Sheet_13
+  - first:
+      213: 8246743093862937450
+    second: satyr-Sheet_14
+  - first:
+      213: -9090679527280094682
+    second: satyr-Sheet_15
+  - first:
+      213: -8657535690133738371
+    second: satyr-Sheet_16
+  - first:
+      213: 3806757950438420366
+    second: satyr-Sheet_17
+  - first:
+      213: 3155316212880124921
+    second: satyr-Sheet_18
+  - first:
+      213: -8989349777678445939
+    second: satyr-Sheet_19
+  - first:
+      213: -3815115342346992764
+    second: satyr-Sheet_20
+  - first:
+      213: -1568792149271735292
+    second: satyr-Sheet_21
+  - first:
+      213: -2441872003518496861
+    second: satyr-Sheet_22
+  - first:
+      213: -6356044737425668974
+    second: satyr-Sheet_23
+  - first:
+      213: -3221941317269677631
+    second: satyr-Sheet_24
+  - first:
+      213: -8447568354476253983
+    second: satyr-Sheet_25
+  - first:
+      213: 1471448857968378923
+    second: satyr-Sheet_26
+  - first:
+      213: -986165363864404018
+    second: satyr-Sheet_27
+  - first:
+      213: 1123513356167633143
+    second: satyr-Sheet_28
+  - first:
+      213: 5250359299751361868
+    second: satyr-Sheet_29
+  - first:
+      213: 3438707079305321155
+    second: satyr-Sheet_30
+  - first:
+      213: -9103274775466059678
+    second: satyr-Sheet_31
+  - first:
+      213: -3380032637231196011
+    second: satyr-Sheet_32
+  - first:
+      213: -8186754454052470911
+    second: satyr-Sheet_33
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: satyr-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 276
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4509e62107870c469d378bfcda9a0d4
+      internalID: 5810546318280948410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 276
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead9afd8347b9e44e95f759c376bb445
+      internalID: 3538600779889645633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 276
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee652c0a237d4a428e4e0490fb7fb6c
+      internalID: 5972640947450538140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 276
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd814901a2b27a48b8e72c2dc8904ea
+      internalID: 3625921613320813194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 276
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca2e6a029305704e806f62a2ec2d871
+      internalID: 416278759348026670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 230
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51d3db8a2ec2bf54eb5e5822c8c84c7f
+      internalID: 2834178288588296462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 230
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a95d5e1ed03baa4489d5285acab8f874
+      internalID: -4343868435699055271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 230
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39246c055b7f22445a90522a5bc0bf57
+      internalID: -2535206180567118510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 230
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0022db89014d9b6419dd68b13c5204d3
+      internalID: 5986724221350705459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 230
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e19a324db6dbe68408ade040660309a5
+      internalID: -8529195420775277096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 184
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a671d9dc5505ed343924a9ebd8287041
+      internalID: -1735295731611331518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 184
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cecab13e5e55f9e48b5f4d4493d5d5df
+      internalID: 3140411426866899370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 184
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41efbc55c73cbd64fa06879557bd6a46
+      internalID: 4346690959149735221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 184
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 938eb71dd384b6c4498d2e1b9a434f8e
+      internalID: 3381486124959585740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 184
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd99537f22cc3840a583d593bb76625
+      internalID: 8246743093862937450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 138
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be8b2d0547f3814fba0d1efbb010cd6
+      internalID: -9090679527280094682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 138
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67fe79c049a78fd4285ba213082438ef
+      internalID: -8657535690133738371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 138
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d7916e4802bb224ba0dd04defde42e8
+      internalID: 3806757950438420366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 138
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c36d09c0d1884d47830c6bfea78b4ec
+      internalID: 3155316212880124921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 138
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11115c4bfe8dc984881134b20c437908
+      internalID: -8989349777678445939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c3835f12e90b5545a0ec6d5b9452d49
+      internalID: -3815115342346992764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 92
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8100315a04aea45a22605f3aac473b
+      internalID: -1568792149271735292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 92
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37385e0ead2c8864d81d183cbc112bf0
+      internalID: -2441872003518496861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 92
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b308c36dc641c4fb03612f75cf7e54
+      internalID: -6356044737425668974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 92
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6371ad233d6a8d44c92b5499ae6de513
+      internalID: -3221941317269677631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 46
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294af390ea765ee4e884647c2e8d731f
+      internalID: -8447568354476253983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 46
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38becb29f263e5443a69d140a9f96d4b
+      internalID: 1471448857968378923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 46
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b47ab007de67b49a4fd1f7e091f48d
+      internalID: -986165363864404018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 46
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773f53abae7fc304b9029a5081dea4de
+      internalID: 1123513356167633143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 46
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b766e7362c9614a8333d07702fe237
+      internalID: 5250359299751361868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a6b51efbc9727439bd3f80c5f9a862
+      internalID: 3438707079305321155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6be9c67614fcb7f4b98b7442c1f49140
+      internalID: -9103274775466059678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c679329b2bf0040bd00b3569e730f4
+      internalID: -3380032637231196011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: satyr-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 0
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ac3faea797d86245aee5f25fcd3dcb4
+      internalID: -8186754454052470911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

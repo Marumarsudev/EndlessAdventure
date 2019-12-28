@@ -1,0 +1,955 @@
+fileFormatVersion: 2
+guid: d17c1c8179efa5d4a9d45d4b17c2eff3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4076053426328075906
+    second: red-ogre-Sheet_0
+  - first:
+      213: 1188755873866304394
+    second: red-ogre-Sheet_1
+  - first:
+      213: 3381952218612574525
+    second: red-ogre-Sheet_2
+  - first:
+      213: -1872963138091240367
+    second: red-ogre-Sheet_3
+  - first:
+      213: 8745637660104846563
+    second: red-ogre-Sheet_4
+  - first:
+      213: 1229767430880799886
+    second: red-ogre-Sheet_5
+  - first:
+      213: -5434171773477082279
+    second: red-ogre-Sheet_6
+  - first:
+      213: 8152495433506109110
+    second: red-ogre-Sheet_7
+  - first:
+      213: -4336449148363306051
+    second: red-ogre-Sheet_8
+  - first:
+      213: 8871296651011211581
+    second: red-ogre-Sheet_9
+  - first:
+      213: 3157452693151143759
+    second: red-ogre-Sheet_10
+  - first:
+      213: 8308339435696344528
+    second: red-ogre-Sheet_11
+  - first:
+      213: 8457639760596411438
+    second: red-ogre-Sheet_12
+  - first:
+      213: -5658946527023387892
+    second: red-ogre-Sheet_13
+  - first:
+      213: -898491161425773298
+    second: red-ogre-Sheet_14
+  - first:
+      213: 7198050548390630404
+    second: red-ogre-Sheet_15
+  - first:
+      213: -4468487889746549777
+    second: red-ogre-Sheet_16
+  - first:
+      213: -6799071457463091711
+    second: red-ogre-Sheet_17
+  - first:
+      213: -8942370563112013312
+    second: red-ogre-Sheet_18
+  - first:
+      213: 5074565487992547417
+    second: red-ogre-Sheet_19
+  - first:
+      213: -7980378365569585277
+    second: red-ogre-Sheet_20
+  - first:
+      213: 8462060530339694907
+    second: red-ogre-Sheet_21
+  - first:
+      213: -2942483211687038342
+    second: red-ogre-Sheet_22
+  - first:
+      213: 5422078664526687676
+    second: red-ogre-Sheet_23
+  - first:
+      213: 6253738380467327160
+    second: red-ogre-Sheet_24
+  - first:
+      213: -1302299401135321544
+    second: red-ogre-Sheet_25
+  - first:
+      213: 6246001471383309592
+    second: red-ogre-Sheet_26
+  - first:
+      213: 7918739169793303771
+    second: red-ogre-Sheet_27
+  - first:
+      213: -3650642435817814710
+    second: red-ogre-Sheet_28
+  - first:
+      213: -8840776576787361275
+    second: red-ogre-Sheet_29
+  - first:
+      213: 6134460454850720282
+    second: red-ogre-Sheet_30
+  - first:
+      213: 8207208137187759190
+    second: red-ogre-Sheet_31
+  - first:
+      213: 3760485198374772162
+    second: red-ogre-Sheet_32
+  - first:
+      213: -8485662702790838539
+    second: red-ogre-Sheet_33
+  - first:
+      213: 8524382276034263707
+    second: red-ogre-Sheet_34
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: red-ogre-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 276
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b403487fc8c2c342ab75ce6fa7870c0
+      internalID: -4076053426328075906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 276
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29385680ba887e64da644ffe3a9b0024
+      internalID: 1188755873866304394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 276
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b580583022df27749a1bc314b5b9b2a6
+      internalID: 3381952218612574525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 276
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3cf3caf625ae24cae916ec89624a86
+      internalID: -1872963138091240367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 276
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9d0578c093a0142b505777849e2270
+      internalID: 8745637660104846563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 230
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee1abe89e97f1643b9a844c4a3de617
+      internalID: 1229767430880799886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 230
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d16a2f9c0a85c248b67322ad1e811e5
+      internalID: -5434171773477082279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 230
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd3fc2582de499419a582745331e6f8
+      internalID: 8152495433506109110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 230
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc5dce6b707e4d0449fd8f94c9c729be
+      internalID: -4336449148363306051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 230
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6703ce0d7a044f4d847cb3e11991be5
+      internalID: 8871296651011211581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 184
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d3a22406299f840a7234f6ca1724a3
+      internalID: 3157452693151143759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 184
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352a6a79b6f4113479254cfed3f95b05
+      internalID: 8308339435696344528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 184
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a7ff2a28aa66924f9cd2099d07e54e9
+      internalID: 8457639760596411438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 184
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8af4187dcac18174c9e6b8d802796f95
+      internalID: -5658946527023387892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 184
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc055ff299db00e4a80f346e36eace91
+      internalID: -898491161425773298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 138
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c15ea953cb1562c418cbc5996d696369
+      internalID: 7198050548390630404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 138
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc50aa279fe1e6d4cb09a233fd08da99
+      internalID: -4468487889746549777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 138
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f546c595ea06cae44b5c87ebf4aba90a
+      internalID: -6799071457463091711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 138
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d822ed4bf1005438e0fa185adfed5a
+      internalID: -8942370563112013312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 138
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f22a050b55cab4895e7475b6531c8f
+      internalID: 5074565487992547417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b343c79592b3da447a4e69a28b4b0d97
+      internalID: -7980378365569585277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 92
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd8777bca273d9e45975de5b8c6afe8f
+      internalID: 8462060530339694907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 92
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c2d07d486deb446bc5123c4f3e8fbf
+      internalID: -2942483211687038342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 92
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13997ff0932d1f649a77695f2cabea02
+      internalID: 5422078664526687676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 92
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 702d22e1ffc87ef4dad2d21d6b6bc708
+      internalID: 6253738380467327160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 46
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 261bdde7292895943b33d0005b883452
+      internalID: -1302299401135321544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 46
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 006e237f053986f47a7ea9f9ee510d1f
+      internalID: 6246001471383309592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 46
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632bfcb92d923ae4f9e5f0fab8faa83f
+      internalID: 7918739169793303771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 46
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b4a38a7d77e8394585f45632d627d35
+      internalID: -3650642435817814710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 46
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b160e54f3e1e42247b59213bc1693a30
+      internalID: -8840776576787361275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd0d339047c2834fa6fe3970ec6d950
+      internalID: 6134460454850720282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c94c66871abcb14b9f9d222ac88401f
+      internalID: 8207208137187759190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 0
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a3525e7e205744a8d07c9f30683e2c
+      internalID: 3760485198374772162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 0
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28dddf4bf71662c4ea2e077194b5ccc8
+      internalID: -8485662702790838539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-ogre-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 0
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20995ce73c3a2b149b648a9d76ed8a5d
+      internalID: 8524382276034263707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

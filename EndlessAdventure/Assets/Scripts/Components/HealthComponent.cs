@@ -12,7 +12,7 @@ public class HealthComponent : MonoBehaviour
 
     public List<Event> deathEvents = new List<Event>();
 
-    public TextMeshProUGUI statusText;
+    public TextMeshPro statusText;
 
     void Start()
     {
@@ -38,8 +38,8 @@ public class HealthComponent : MonoBehaviour
         {
             Death(attacker);
         }
-        else
-            UpdateUI();
+
+        UpdateUI();
     }
 
     public void TakeHealth(int heal, BaseObject attacker)
@@ -56,7 +56,10 @@ public class HealthComponent : MonoBehaviour
 
     private void UpdateUI()
     {
-        statusText.text = $"{curHealth.ToString()}";
+        if(curHealth > 0)
+            statusText.text = $"{curHealth.ToString()}";
+        else
+            statusText.text = "";
     }
 
     private void Death(BaseObject attacker)
@@ -65,6 +68,11 @@ public class HealthComponent : MonoBehaviour
             e.CallEvent(attacker);
         });
 
+        GetComponent<Animator>().SetBool("Dead", true);
+    }
+
+    public void DestroySelf()
+    {
         Destroy(this.gameObject);
     }
 
