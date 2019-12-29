@@ -154,7 +154,7 @@ public class GameManager : MonoBehaviour
     {
         if(curTarget.GetComponent<HealthComponent>().curHealth > 0)
         {
-            if(curTarget.GetComponent<SpriteRenderer>().flipX)
+            if(curTarget.GetComponent<SpriteRenderer>().flipX == player.GetComponent<SpriteRenderer>().flipX)
                 curTarget.GetComponent<SpriteRenderer>().flipX = false;
             else
                 curTarget.GetComponent<SpriteRenderer>().flipX = true;

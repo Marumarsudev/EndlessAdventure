@@ -35,6 +35,30 @@ public class BaseObject : MonoBehaviour
 
     public Inventory inventory;
 
+    public List<AudioClip> AttackAudio = new List<AudioClip>();
+    public List<AudioClip> HurtAudio = new List<AudioClip>();
+    public List<AudioClip> DeathAudio = new List<AudioClip>();
+
+    private AudioSource audioSource;
+
+    public void PlayAttackClip()
+    {
+        if(AttackAudio.Count > 0)
+            audioSource.PlayOneShot(AttackAudio[Random.Range(0, AttackAudio.Count)]);
+    }
+
+    public void PlayHurtClip()
+    {
+        if(HurtAudio.Count > 0)
+            audioSource.PlayOneShot(HurtAudio[Random.Range(0, HurtAudio.Count)]);
+    }
+
+    public void PlayDeathClip()
+    {
+        if(DeathAudio.Count > 0)
+            audioSource.PlayOneShot(DeathAudio[Random.Range(0, DeathAudio.Count)]);
+    }
+
     public void TriggerAttacked()
     {
         Attacked();
@@ -82,6 +106,6 @@ public class BaseObject : MonoBehaviour
 
     void Start()
     {
-        //nameText.text = oName;
+        audioSource = GetComponent<AudioSource>();
     }
 }

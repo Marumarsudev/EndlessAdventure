@@ -15,6 +15,7 @@ public class DamageEventPlayer : Event
     {
         try
         {
+            GetComponent<BaseObject>().PlayAttackClip();
             target.GetComponent<HealthComponent>().TakeDamage(damage, GetComponent<BaseObject>());
         }
         catch

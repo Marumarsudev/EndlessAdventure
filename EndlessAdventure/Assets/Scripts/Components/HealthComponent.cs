@@ -54,6 +54,7 @@ public class HealthComponent : MonoBehaviour
 
     public void TakeDamage(int dmg, BaseObject attacker)
     {
+        GetComponent<BaseObject>().PlayHurtClip();
         if(halfDamageCount <= 0)
             curHealth -= dmg;
         else
@@ -102,6 +103,8 @@ public class HealthComponent : MonoBehaviour
         deathEvents.ForEach(e => {
             e.CallEvent(attacker);
         });
+
+        GetComponent<BaseObject>().PlayDeathClip();
 
         GetComponent<Animator>().SetBool("Dead", true);
     }
