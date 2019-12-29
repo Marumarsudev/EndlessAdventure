@@ -108,7 +108,8 @@ MonoBehaviour:
   EntryAnimationEvents:
   - {fileID: 4922336827811465738}
   inventory: {fileID: 0}
-  AttackAudio: []
+  AttackAudio:
+  - {fileID: 8300000, guid: 4f4c7371adac66d4ba0165fc68561990, type: 3}
   HurtAudio:
   - {fileID: 8300000, guid: 314cf881c1910b049b8b4c3d8701f04b, type: 3}
   - {fileID: 8300000, guid: 344637d39040b8a4392ee8eda4a7d301, type: 3}
@@ -212,7 +213,8 @@ AudioSource:
   m_GameObject: {fileID: 1312738640918164102}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3326979737312407064, guid: 53cae142f9fdd094cac73815bcabb721,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

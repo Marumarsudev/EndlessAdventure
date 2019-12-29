@@ -109,14 +109,11 @@ MonoBehaviour:
   - {fileID: 4922336827811465738}
   inventory: {fileID: 0}
   AttackAudio:
-  - {fileID: 8300000, guid: 6cf70c6efc4e2ca4cb3ec47881389ccb, type: 3}
-  - {fileID: 8300000, guid: 38e92f4c4d0098343aa017a3b3d1f12b, type: 3}
-  - {fileID: 8300000, guid: a22805f730df88b4b811bedba1f3c490, type: 3}
+  - {fileID: 8300000, guid: 794f528418a5e3946958b039160d652f, type: 3}
   HurtAudio:
   - {fileID: 8300000, guid: d9ed7f55f58c2984f9d1e66727e922e1, type: 3}
   DeathAudio:
-  - {fileID: 8300000, guid: a0feb9e7b0be1944d9344f47af80b68c, type: 3}
-  - {fileID: 8300000, guid: ac181f1b59f61cc4c80267ecf7fa4e13, type: 3}
+  - {fileID: 8300000, guid: dc2d0e4ff06dc9c4fb5340aad7c18940, type: 3}
 --- !u!114 &1312738640918164101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +212,8 @@ AudioSource:
   m_GameObject: {fileID: 1312738640918164102}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3326979737312407064, guid: 53cae142f9fdd094cac73815bcabb721,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

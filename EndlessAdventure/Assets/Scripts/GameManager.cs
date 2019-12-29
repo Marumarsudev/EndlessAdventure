@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -44,6 +45,9 @@ public class GameManager : MonoBehaviour
     private int score = 0;
     public TextMeshProUGUI scoretext;
     public TextMeshProUGUI DiedText;
+
+    public GameObject RestartBtn;
+    public GameObject MainMenuBtn;
 
     public SpriteRenderer fadescreen;
 
@@ -138,26 +142,35 @@ public class GameManager : MonoBehaviour
         curTarget.GetComponent<BaseObject>().CallEvents(playerBase);
         if(player.GetComponent<HealthComponent>().curHealth <= 0 || !player)
         {
-            fadescreen.DOFade(1f, 5f);
-            DiedText.DOFontSize(150, 5f)
-            .OnComplete(() => {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            scoretext.transform.DOMove(new Vector3(0,1,0), 5f);
+            playerBase.inventory.GetComponent<Transform>().DOMoveY(-10, 5f);
+            playerBase.inventory.CanInteract = false;
+            fadescreen.DOFade(1f, 5f).OnComplete(() => {
+                RestartBtn.SetActive(true);
+                MainMenuBtn.SetActive(true);
+                MainMenuBtn.GetComponent<Image>().DOFade(1,2f);
+                RestartBtn.GetComponent<Image>().DOFade(1,2f);
+                RestartBtn.GetComponentInChildren<TextMeshProUGUI>().DOFade(1,2f);
+                MainMenuBtn.GetComponentInChildren<TextMeshProUGUI>().DOFade(1,2f);
             });
-            DiedText.DOFade(1f, 2.5f)
-            .OnComplete(() => {
-                DiedText.DOFade(0, 2.5f);
-            });
+            DiedText.DOFontSize(150, 5f);
+            DiedText.DOFade(1f, 2.5f);
         }
+    }
+
+    public void ChangeScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 
     private void AttackBack()
     {
         if(curTarget.GetComponent<HealthComponent>().curHealth > 0)
         {
-            if(curTarget.GetComponent<SpriteRenderer>().flipX == player.GetComponent<SpriteRenderer>().flipX)
-                curTarget.GetComponent<SpriteRenderer>().flipX = false;
-            else
+            if(!curTarget.GetComponent<SpriteRenderer>().flipX)
                 curTarget.GetComponent<SpriteRenderer>().flipX = true;
+            else
+                curTarget.GetComponent<SpriteRenderer>().flipX = false;
             curTarget.GetComponent<BaseObject>().CallAnimationEvents();
         }
     }

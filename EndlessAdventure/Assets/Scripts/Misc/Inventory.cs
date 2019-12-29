@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+
 public class Inventory : MonoBehaviour
 {
 
@@ -19,11 +20,25 @@ public class Inventory : MonoBehaviour
     private InventoryItem Slot1, Slot2, Slot3;
     public Image Slot1Sprite, Slot2Sprite, Slot3Sprite;
 
+    public bool CanInteract
+    {
+        get
+        {
+            return canInteract;
+        }
+        set
+        {
+            canInteract = value;
+        }
+    }
+
     void Start()
     {
         playerBase = player.GetComponent<BaseObject>();
         origpos = GetComponent<RectTransform>().localPosition;
+        OpenCloseInventory();
     }
+
 
     public void AddItem(InventoryItem item)
     {
@@ -91,10 +106,21 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void OpenCloseInventory()
+    public void OpenCloseInventory(bool instant = false)
     {
-        
-        if(canInteract)
+        if(instant)
+        {
+            if(isOpen)
+            {
+                GetComponent<RectTransform>().DOLocalMove(origpos, 0f);
+            }
+            else
+            {
+                GetComponent<RectTransform>().DOLocalMove(origpos + new Vector3(0, moveAmount, 0), 0f);
+            }
+            isOpen = !isOpen;
+        }
+        else if(canInteract)
         {
             canInteract = false;
             if(isOpen)
