@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1312738640918164123}
   - component: {fileID: -1050732909884578507}
   - component: {fileID: 7747270501780468204}
+  - component: {fileID: -5377193985569226092}
   - component: {fileID: 1606388632835602938}
   m_Layer: 0
   m_Name: HP Potion Large
@@ -103,6 +104,7 @@ MonoBehaviour:
   EntryEvents:
   - {fileID: 7747270501780468204}
   - {fileID: 1606388632835602938}
+  - {fileID: -5377193985569226092}
   EntryAnimationEvents: []
 --- !u!61 &-1050732909884578507
 BoxCollider2D:
@@ -144,6 +146,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healAmount: 7
   statusText: {fileID: 7675803257862880161}
+--- !u!114 &-5377193985569226092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312738640918164102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20f4d8deb362e5b448bffa71f3206464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 9100000, guid: b3f1efdbb6ada17419af79e8f92b3ea2, type: 2}
+  offset: {x: 0, y: 0}
 --- !u!114 &1606388632835602938
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class DamageEvent : Event
     {
         try
         {
-            target.GetComponent<HealthComponent>().TakeDamage(GetComponent<HealthComponent>().maxHealth, GetComponent<BaseObject>());
+            target.GetComponent<HealthComponent>().TakeDamage(GetComponent<HealthComponent>().curHealth, GetComponent<BaseObject>());
         }
         catch
         {

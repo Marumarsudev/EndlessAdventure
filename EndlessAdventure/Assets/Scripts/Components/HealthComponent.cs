@@ -12,12 +12,34 @@ public class HealthComponent : MonoBehaviour
 
     public List<Event> deathEvents = new List<Event>();
 
+    public List<Event> effectEvents = new List<Event>();
+
+    public float effectRate;
+    private float effectTimer = 0f;
+
     public TextMeshPro statusText;
+
+    public int halfDamageCount = 0;
 
     void Start()
     {
         curHealth = startingHealth;
         UpdateUI();
+    }
+
+    void Update()
+    {
+        effectTimer += Time.deltaTime;
+        if(effectTimer >= effectRate)
+        {
+            if(halfDamageCount > 0)
+            {
+                effectEvents.ForEach(e => {
+                    e.CallEvent(GetComponent<BaseObject>());
+                });
+            }
+            effectTimer = 0f;
+        }
     }
 
     public void SendDamage(HealthComponent target)
@@ -32,7 +54,15 @@ public class HealthComponent : MonoBehaviour
 
     public void TakeDamage(int dmg, BaseObject attacker)
     {
-        curHealth -= dmg;
+        if(halfDamageCount <= 0)
+            curHealth -= dmg;
+        else
+        {
+            halfDamageCount--;
+            if(halfDamageCount < 0)
+                halfDamageCount = 0;
+            curHealth -= dmg/2;
+        }
 
         if (curHealth <= 0)
         {
@@ -40,6 +70,11 @@ public class HealthComponent : MonoBehaviour
         }
 
         UpdateUI();
+    }
+
+    public void AddHalfDamageCount(int amount)
+    {
+        halfDamageCount += amount;
     }
 
     public void TakeHealth(int heal, BaseObject attacker)

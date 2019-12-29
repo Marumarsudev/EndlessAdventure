@@ -33,6 +33,8 @@ public class BaseObject : MonoBehaviour
     public List<Event> EntryEvents = new List<Event>();
     public List<Event> EntryAnimationEvents = new List<Event>();
 
+    public Inventory inventory;
+
     public void TriggerAttacked()
     {
         Attacked();

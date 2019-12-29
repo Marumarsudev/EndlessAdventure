@@ -45,9 +45,13 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoretext;
     public TextMeshProUGUI DiedText;
 
+    public SpriteRenderer fadescreen;
+
     // Start is called before the first frame update
     void Start()
     {
+        fadescreen.enabled = true;
+        fadescreen.DOFade(0, 2.5f);
         playerAnimator = player.GetComponent<Animator>();
         playerBase = player.GetComponent<BaseObject>();
         playerBase.Attack += EnemyDamaged;
@@ -134,13 +138,15 @@ public class GameManager : MonoBehaviour
         curTarget.GetComponent<BaseObject>().CallEvents(playerBase);
         if(player.GetComponent<HealthComponent>().curHealth <= 0 || !player)
         {
-            DiedText.gameObject.SetActive(true);
-            DiedText.DOFade(0, 0);
-            DiedText.DOFontSize(150, 2.5f)
+            fadescreen.DOFade(1f, 5f);
+            DiedText.DOFontSize(150, 5f)
             .OnComplete(() => {
-                canMove = true;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             });
-            DiedText.DOFade(255, 2.5f);
+            DiedText.DOFade(1f, 2.5f)
+            .OnComplete(() => {
+                DiedText.DOFade(0, 2.5f);
+            });
         }
     }
 
@@ -338,7 +344,7 @@ public class GameManager : MonoBehaviour
         {
             CheckInput(Input.mousePosition);
         }
-        else if (Input.GetMouseButtonDown(0) && player == null)
+        if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -351,10 +357,10 @@ public class GameManager : MonoBehaviour
             {
                 CheckInput(touch.position);
             }
-            else if (touch.phase == TouchPhase.Began && player == null)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
+            // else if (touch.phase == TouchPhase.Began && player == null)
+            // {
+            //     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            // }
         }
     }
 
