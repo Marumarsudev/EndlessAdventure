@@ -195,7 +195,7 @@ public class GameManager : MonoBehaviour
     {
         if(curTarget.GetComponent<HealthComponent>())
         {
-            if(curTarget.GetComponent<HealthComponent>().curHealth < 0)
+            if(curTarget.GetComponent<HealthComponent>().curHealth <= 0)
             {
                 player.transform.DOMove(new Vector3(xOffset * (int)playerBase.lane, player.transform.position.y, 0), 0.5f, false)
                 .OnStart(() => {playerAnimator.SetBool("Moving", true);})
