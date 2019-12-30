@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 
-public enum Type
+public enum BaseObjectType
 {
     player,
     enemy,
@@ -20,7 +20,7 @@ public enum Lane
 
 public class BaseObject : MonoBehaviour
 {
-    public Type oType;
+    public BaseObjectType oType;
     public string oName;
     //public TextMeshProUGUI nameText;
     public Lane lane;

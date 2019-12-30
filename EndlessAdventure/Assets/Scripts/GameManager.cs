@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using DG.Tweening;
 using UnityEngine.UI;
+using EasyMobile;
 
 public class GameManager : MonoBehaviour
 {
@@ -54,6 +55,14 @@ public class GameManager : MonoBehaviour
     public GameObject MainMenuBtn;
 
     public SpriteRenderer fadescreen;
+
+    void Awake()
+    {
+        if(!RuntimeManager.IsInitialized())
+        {
+            RuntimeManager.Init();
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -147,6 +156,13 @@ public class GameManager : MonoBehaviour
         curTarget.GetComponent<BaseObject>().CallEvents(playerBase);
         if(player.GetComponent<HealthComponent>().curHealth <= 0 || !player)
         {
+
+            Advertising.ShowBannerAd(BannerAdPosition.Bottom);
+            Advertising.ShowInterstitialAd();
+            // if(Random.Range(0f, 1f) > 0.9f && Advertising.IsInterstitialAdReady())
+            // {
+            //     Advertising.ShowInterstitialAd();
+            // }
             scoretext.transform.DOMove(new Vector3(0,1,0), 3f);
             playerBase.inventory.GetComponent<Transform>().DOMoveY(-10, 3f);
             PlayerMaxHP.DOFade(0,2f);
@@ -236,9 +252,9 @@ public class GameManager : MonoBehaviour
     private void StartCombat(bool playerStart)
     {
         player.GetComponent<DamageEventPlayer>().SetDamage(player.GetComponent<HealthComponent>().curHealth);
-        if(curTarget.GetComponent<BaseObject>().oType == Type.enemy && !playerStart && playerBase.InvisibilityTime <= 0)
+        if(curTarget.GetComponent<BaseObject>().oType == BaseObjectType.enemy && !playerStart && playerBase.InvisibilityTime <= 0)
             curTarget.GetComponent<BaseObject>().CallAnimationEvents();
-        else if(curTarget.GetComponent<BaseObject>().oType == Type.enemy && (playerStart || playerBase.InvisibilityTime > 0))
+        else if(curTarget.GetComponent<BaseObject>().oType == BaseObjectType.enemy && (playerStart || playerBase.InvisibilityTime > 0))
         {
             playerAnimator.SetTrigger("Attack");
         }
@@ -273,7 +289,7 @@ public class GameManager : MonoBehaviour
             spacing =  -0.75f;
         }
 
-        if(target.GetComponent<BaseObject>().oType == Type.item)
+        if(target.GetComponent<BaseObject>().oType == BaseObjectType.item)
             spacing = 0;
 
         playerBase.lane = (Lane)lane;
