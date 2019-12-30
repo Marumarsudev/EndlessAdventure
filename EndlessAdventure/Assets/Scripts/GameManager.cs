@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     private float itemChance;
     public float itemBaseChance;
-
+    public float itemChanceAdd;
 
     private float difficulty = 0.00f;
 
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
                     GameObject temp;
                     if(rand > itemChance)
                     {
-                        itemChance += 0.02f;
+                        itemChance += itemChanceAdd;
                         rand = Random.Range(0f, 1f);
                         if(rand > 0.99f - difficulty)
                             temp = Instantiate(EnemiesH[Random.Range(0, EnemiesH.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
@@ -179,6 +179,10 @@ public class GameManager : MonoBehaviour
                 curTarget.GetComponent<SpriteRenderer>().flipX = false;
             curTarget.GetComponent<BaseObject>().CallAnimationEvents();
         }
+        else if(curTarget.GetComponent<HealthComponent>().curHealth > 0 && playerBase.InvisibilityTime > 0)
+        {
+            playerAnimator.SetTrigger("Attack");
+        }
     }
 
     private void EnemyDamaged()
@@ -209,6 +213,7 @@ public class GameManager : MonoBehaviour
                 player.transform.DOMove(new Vector3(xOffset * (int)playerBase.lane, player.transform.position.y, 0), 0.5f, false)
                 .OnStart(() => {playerAnimator.SetBool("Moving", true);})
                 .OnComplete(() => {
+                    playerBase.inventory.CanInteract = true;
                     playerAnimator.SetBool("Moving", false);
                     canMove = true;
                     MurderLineDestroy();
@@ -220,6 +225,7 @@ public class GameManager : MonoBehaviour
             player.transform.DOMove(new Vector3(xOffset * (int)playerBase.lane, player.transform.position.y, 0), 0.5f, false)
                 .OnStart(() => {playerAnimator.SetBool("Moving", true);})
                 .OnComplete(() => {
+                    playerBase.inventory.CanInteract = true;
                     playerAnimator.SetBool("Moving", false);
                     canMove = true;
                     MurderLineDestroy();
@@ -244,6 +250,7 @@ public class GameManager : MonoBehaviour
 
     private void MoveCards(int lane, float dir, GameObject target)
     {
+        playerBase.inventory.CanInteract = false;
         pStart = false;
         canMove = false;
         float spacing = (float)lane * -0.75f;

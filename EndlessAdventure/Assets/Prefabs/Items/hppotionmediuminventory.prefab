@@ -50,6 +50,7 @@ MonoBehaviour:
   - {fileID: 5833506952168007825}
   image: {fileID: 21300000, guid: c3011e00726e9d549b0cd5b55e97380d, type: 3}
   itemname: HP Potion Medium
+  desc: HP +5
 --- !u!114 &6271020729590323953
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class InventoryItem : MonoBehaviour
     public List<Event> events = new List<Event>();
     public Sprite image;
     public string itemname;
+    public string desc;
 
     public void UseItem(BaseObject target)
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using TMPro;
 
 public class Inventory : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Inventory : MonoBehaviour
 
     private InventoryItem Slot1, Slot2, Slot3;
     public Image Slot1Sprite, Slot2Sprite, Slot3Sprite;
+    public TextMeshProUGUI Slot1Desc, Slot2Desc, Slot3Desc;
 
     public bool CanInteract
     {
@@ -47,18 +49,21 @@ public class Inventory : MonoBehaviour
             Slot1 = item;
             Slot1Sprite.enabled = true;
             Slot1Sprite.sprite = item.image;
+            Slot1Desc.text = item.desc;
         }
         else if(Slot2 == null)
         {
             Slot2 = item;
             Slot2Sprite.enabled = true;
             Slot2Sprite.sprite = item.image;
+            Slot2Desc.text = item.desc;
         }
         else if(Slot3 == null)
         {
             Slot3 = item;
             Slot3Sprite.enabled = true;
             Slot3Sprite.sprite = item.image;
+            Slot3Desc.text = item.desc;
         }
         else
         {
@@ -68,6 +73,9 @@ public class Inventory : MonoBehaviour
 
     public void UseSlot(int slot)
     {
+        if(!canInteract)
+            return;
+            
         switch(slot)
         {
             case 1:
@@ -77,6 +85,7 @@ public class Inventory : MonoBehaviour
                     Slot1 = null;
                     Slot1Sprite.enabled = false;
                     Slot1Sprite.sprite = null;
+                    Slot1Desc.text = "";
                 }
             break;
 
@@ -87,6 +96,7 @@ public class Inventory : MonoBehaviour
                     Slot2 = null;
                     Slot2Sprite.enabled = false;
                     Slot2Sprite.sprite = null;
+                    Slot2Desc.text = "";
                 }
             break;
 
@@ -97,6 +107,7 @@ public class Inventory : MonoBehaviour
                     Slot3 = null;
                     Slot3Sprite.enabled = false;
                     Slot3Sprite.sprite = null;
+                    Slot3Desc.text = "";
                 }
             break;
 

@@ -48,6 +48,7 @@ MonoBehaviour:
   - {fileID: -7556287502538239184}
   image: {fileID: 21300000, guid: 4d1a886943044ef4b8681a5f88df6f31, type: 3}
   itemname: Shield Potion
+  desc: Shield +3
 --- !u!114 &-7556287502538239184
 MonoBehaviour:
   m_ObjectHideFlags: 0
