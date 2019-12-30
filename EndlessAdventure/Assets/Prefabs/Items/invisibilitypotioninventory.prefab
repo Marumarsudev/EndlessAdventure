@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5303428392847950763}
   - component: {fileID: -2912434717219356512}
-  - component: {fileID: -7556287502538239184}
+  - component: {fileID: -961164241066592924}
   m_Layer: 0
-  m_Name: shieldpotioninventory
+  m_Name: invisibilitypotioninventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   events:
-  - {fileID: -7556287502538239184}
-  image: {fileID: 21300000, guid: 4d1a886943044ef4b8681a5f88df6f31, type: 3}
-  itemname: Shield Potion
---- !u!114 &-7556287502538239184
+  - {fileID: -961164241066592924}
+  image: {fileID: 21300000, guid: 5cb8cdcadd342f24490fa18853499255, type: 3}
+  itemname: Invisibility Potion
+--- !u!114 &-961164241066592924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4480971073890189320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebcb7f1ba403cf0438c143f0534d7c1e, type: 3}
+  m_Script: {fileID: 11500000, guid: da8eb7ace4194ae4ca8ceda727469bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HalfDamageCount: 3
+  amount: 1

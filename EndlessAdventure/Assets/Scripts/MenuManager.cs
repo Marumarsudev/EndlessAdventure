@@ -26,13 +26,23 @@ public class MenuManager : MonoBehaviour
     public GameObject SettingsMenu;
     public GameObject Credits;
 
+    public LocalSaveData saveData;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(LocalSaveHandler.LoadData("LocalSaveData") != null)
+        {
+            saveData = LocalSaveHandler.LoadData("LocalSaveData") as LocalSaveData;
+            ApplyLoadedDataToMixer();
+        }
+        else
+        {
+            saveData = new LocalSaveData(null);
+        }
+        UpdateSettingsUI();
         MoveBG1();
         MoveBG2();
-        UpdateSettingsUI();
     }
 
     public void MainMenuVisible(bool visible)
@@ -46,6 +56,18 @@ public class MenuManager : MonoBehaviour
         public void CreditsVisible(bool visible)
     {
         Credits.SetActive(visible);
+    }
+
+    public void SaveLocalData(object data)
+    {
+        LocalSaveHandler.SaveData(data, "LocalSaveData");
+    }
+
+    private void ApplyLoadedDataToMixer()
+    {
+        MasterMixer.SetFloat("MasterVolume", saveData.MasterVolume);
+        MasterMixer.SetFloat("MusicVolume", saveData.MusicVolume);
+        MasterMixer.SetFloat("FXVolume", saveData.FXVolume);
     }
 
     public void AddVolume(string name)
@@ -76,6 +98,12 @@ public class MenuManager : MonoBehaviour
         MasterMixer.GetFloat("MasterVolume", out float MasterVolume);
         MasterMixer.GetFloat("MusicVolume", out float MusicVolume);
         MasterMixer.GetFloat("FXVolume", out float FXVolume);
+
+        saveData.MasterVolume = MasterVolume;
+        saveData.MusicVolume = MusicVolume;
+        saveData.FXVolume = FXVolume;
+
+        SaveLocalData(saveData);
 
         MasterText.text = (NormalizeVolume(MasterVolume)).ToString();
         MusicText.text = (NormalizeVolume(MusicVolume)).ToString();

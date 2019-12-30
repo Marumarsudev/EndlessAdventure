@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public enum Type
 {
@@ -40,6 +41,41 @@ public class BaseObject : MonoBehaviour
     public List<AudioClip> DeathAudio = new List<AudioClip>();
 
     private AudioSource audioSource;
+
+    public int InvisibilityTime = 0;
+
+    private bool isInvisible = false;
+
+    public void ChangeInvisibilityTime(int amount)
+    {
+        InvisibilityTime += amount;
+
+        if(InvisibilityTime < 0)
+            InvisibilityTime = 0;
+
+        if(InvisibilityTime > 0 && !isInvisible)
+        {
+            MakeInvisible();
+        }
+        else if(InvisibilityTime <= 0 && isInvisible)
+        {
+            MakeVisible();
+        }
+    }
+
+    private void MakeInvisible()
+    {
+        Debug.Log("BRAVO SIX, GOING DARK!");
+        GetComponent<SpriteRenderer>().material.DOFade(0.2f, 0.75f).SetEase(Ease.InFlash);
+        isInvisible = true;
+    }
+
+    private void MakeVisible()
+    {
+        GetComponent<SpriteRenderer>().DOFade(1f, 0.75f);
+        GetComponent<SpriteRenderer>().material.DOFade(1f, 0.75f).SetEase(Ease.InFlash);
+        isInvisible = false;
+    }
 
     public void PlayAttackClip()
     {

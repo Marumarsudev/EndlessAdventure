@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1312738640918164100}
   - component: {fileID: 1312738640918164123}
   - component: {fileID: -1050732909884578507}
-  - component: {fileID: -5819038329135580570}
-  - component: {fileID: 1606388632835602938}
+  - component: {fileID: 5501255279060347532}
+  - component: {fileID: -3553823832115907569}
   m_Layer: 0
-  m_Name: HP Potion Large
+  m_Name: Max HP Increase Potion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 99
-  m_Sprite: {fileID: 21300000, guid: 366fc4440a940cd468730d91cbebba51, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b83758d8e535f1e4a81f3a6f0ea6f569, type: 3}
   m_Color: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,11 +97,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oType: 2
-  oName: HP Potion Small
+  oName: Max HP Increase
   lane: 0
   EntryEvents:
-  - {fileID: -5819038329135580570}
-  - {fileID: 1606388632835602938}
+  - {fileID: 5501255279060347532}
+  - {fileID: -3553823832115907569}
   EntryAnimationEvents: []
   inventory: {fileID: 0}
   AttackAudio: []
@@ -134,7 +134,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.2651422}
   m_EdgeRadius: 0
---- !u!114 &-5819038329135580570
+--- !u!114 &5501255279060347532
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,8 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9613fbb2a4580a4449992b8a68d3ec59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: -2912434717219356512, guid: 75f41a47e5b9b81448a7d76efa246af6, type: 3}
---- !u!114 &1606388632835602938
+  item: {fileID: -2912434717219356512, guid: d97884f3a1d8587459f5b378242a709c, type: 3}
+--- !u!114 &-3553823832115907569
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

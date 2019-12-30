@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5303428392847950763}
   - component: {fileID: -2912434717219356512}
-  - component: {fileID: -7556287502538239184}
+  - component: {fileID: 5136062114965652203}
+  - component: {fileID: 6611628481529133975}
   m_Layer: 0
-  m_Name: shieldpotioninventory
+  m_Name: maxhpincreaseinventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,10 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   events:
-  - {fileID: -7556287502538239184}
-  image: {fileID: 21300000, guid: 4d1a886943044ef4b8681a5f88df6f31, type: 3}
-  itemname: Shield Potion
---- !u!114 &-7556287502538239184
+  - {fileID: 5136062114965652203}
+  - {fileID: 6611628481529133975}
+  image: {fileID: 21300000, guid: b83758d8e535f1e4a81f3a6f0ea6f569, type: 3}
+  itemname: Max HP Increase Potion
+--- !u!114 &5136062114965652203
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,7 +59,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 4480971073890189320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebcb7f1ba403cf0438c143f0534d7c1e, type: 3}
+  m_Script: {fileID: 11500000, guid: 20f4d8deb362e5b448bffa71f3206464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HalfDamageCount: 3
+  Effect: {fileID: 184490, guid: e0e040ae8552dc24f85d90275a90275c, type: 3}
+  controller: {fileID: 9100000, guid: 726bdbeec04cf2440a87a31d5e0c340c, type: 2}
+  offset: {x: 0, y: 1.23}
+--- !u!114 &6611628481529133975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4480971073890189320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a46f6f4836d37d44f94fa59d0fa8ae96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 2

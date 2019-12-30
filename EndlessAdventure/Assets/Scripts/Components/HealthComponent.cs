@@ -19,6 +19,7 @@ public class HealthComponent : MonoBehaviour
 
     public TextMeshPro statusText;
 
+
     public int halfDamageCount = 0;
 
     void Start()
@@ -76,6 +77,11 @@ public class HealthComponent : MonoBehaviour
     public void AddHalfDamageCount(int amount)
     {
         halfDamageCount += amount;
+    }
+
+    public void TakeMaxHealth(int amount)
+    {
+        maxHealth += amount;
     }
 
     public void TakeHealth(int heal, BaseObject attacker)

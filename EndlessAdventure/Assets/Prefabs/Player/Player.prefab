@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: a3a23579a0f72004caa673773e39e790, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -119,6 +119,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d03cb854194d8b948a9eff6065ea9728, type: 3}
   DeathAudio:
   - {fileID: 8300000, guid: adb4cf45862b91945a1bc4ef2ac84ff2, type: 3}
+  InvisibilityTime: 0
 --- !u!114 &1312738640918164101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f4d8deb362e5b448bffa71f3206464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Effect: {fileID: 0}
   controller: {fileID: 9100000, guid: d46c616b1192c334ca8f949d06e5599b, type: 2}
   offset: {x: 0, y: 0.5}
 --- !u!61 &-1050732909884578507
@@ -552,6 +554,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Effect
       objectReference: {fileID: 0}
+    - target: {fileID: 9524544, guid: e0e040ae8552dc24f85d90275a90275c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b3f1efdbb6ada17419af79e8f92b3ea2, type: 2}
     - target: {fileID: 462288, guid: e0e040ae8552dc24f85d90275a90275c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -608,10 +614,6 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 9524544, guid: e0e040ae8552dc24f85d90275a90275c, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: b3f1efdbb6ada17419af79e8f92b3ea2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0e040ae8552dc24f85d90275a90275c, type: 3}
 --- !u!4 &8904152799378885933 stripped

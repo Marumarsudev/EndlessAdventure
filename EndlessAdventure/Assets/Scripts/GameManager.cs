@@ -36,7 +36,9 @@ public class GameManager : MonoBehaviour
 
     private int rowCount = 0;
 
-    private float itemChance = 0.10f;
+    private float itemChance;
+    public float itemBaseChance;
+
 
     private float difficulty = 0.00f;
 
@@ -46,6 +48,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoretext;
     public TextMeshProUGUI DiedText;
 
+    public TextMeshProUGUI PlayerMaxHP;
+
     public GameObject RestartBtn;
     public GameObject MainMenuBtn;
 
@@ -54,6 +58,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        itemChance = itemBaseChance;
         fadescreen.enabled = true;
         fadescreen.DOFade(0, 2.5f);
         playerAnimator = player.GetComponent<Animator>();
@@ -90,25 +95,25 @@ public class GameManager : MonoBehaviour
                     {
                         itemChance += 0.02f;
                         rand = Random.Range(0f, 1f);
-                        if(rand > 0.88f - difficulty)
+                        if(rand > 0.99f - difficulty)
                             temp = Instantiate(EnemiesH[Random.Range(0, EnemiesH.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
-                        else if(rand > 0.44f - difficulty)
+                        else if(rand > 0.66f - difficulty)
                             temp = Instantiate(EnemiesM[Random.Range(0, EnemiesM.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
                         else
                             temp = Instantiate(EnemiesE[Random.Range(0, EnemiesE.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
                     }
                     else
                     {
-                        itemChance = 0.10f;
+                        itemChance = itemBaseChance;
                         rand = Random.Range(0f, 1f);
-                        if(rand > 0.75f)
-                            temp = Instantiate(ItemsC[Random.Range(0, ItemsC.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
-                        else if(rand > 0.50f)
-                            temp = Instantiate(ItemsUC[Random.Range(0, ItemsUC.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
-                        else if(rand > 0.25f)
-                            temp = Instantiate(ItemsR[Random.Range(0, ItemsR.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
-                        else
+                        if(rand > 0.90f)
                             temp = Instantiate(ItemsM[Random.Range(0, ItemsM.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
+                        else if(rand > 0.60f)
+                            temp = Instantiate(ItemsR[Random.Range(0, ItemsR.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
+                        else if(rand > 0.25f)
+                            temp = Instantiate(ItemsUC[Random.Range(0, ItemsUC.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
+                        else
+                            temp = Instantiate(ItemsC[Random.Range(0, ItemsC.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
                     }
 
                     BaseObject tempBase = temp.GetComponent<BaseObject>();
@@ -142,10 +147,11 @@ public class GameManager : MonoBehaviour
         curTarget.GetComponent<BaseObject>().CallEvents(playerBase);
         if(player.GetComponent<HealthComponent>().curHealth <= 0 || !player)
         {
-            scoretext.transform.DOMove(new Vector3(0,1,0), 5f);
-            playerBase.inventory.GetComponent<Transform>().DOMoveY(-10, 5f);
+            scoretext.transform.DOMove(new Vector3(0,1,0), 3f);
+            playerBase.inventory.GetComponent<Transform>().DOMoveY(-10, 3f);
+            PlayerMaxHP.DOFade(0,2f);
             playerBase.inventory.CanInteract = false;
-            fadescreen.DOFade(1f, 5f).OnComplete(() => {
+            fadescreen.DOFade(1f, 3f).OnComplete(() => {
                 RestartBtn.SetActive(true);
                 MainMenuBtn.SetActive(true);
                 MainMenuBtn.GetComponent<Image>().DOFade(1,2f);
@@ -153,7 +159,7 @@ public class GameManager : MonoBehaviour
                 RestartBtn.GetComponentInChildren<TextMeshProUGUI>().DOFade(1,2f);
                 MainMenuBtn.GetComponentInChildren<TextMeshProUGUI>().DOFade(1,2f);
             });
-            DiedText.DOFontSize(150, 5f);
+            DiedText.DOFontSize(150, 3f);
             DiedText.DOFade(1f, 2.5f);
         }
     }
@@ -165,7 +171,7 @@ public class GameManager : MonoBehaviour
 
     private void AttackBack()
     {
-        if(curTarget.GetComponent<HealthComponent>().curHealth > 0)
+        if(curTarget.GetComponent<HealthComponent>().curHealth > 0 && playerBase.InvisibilityTime <= 0)
         {
             if(!curTarget.GetComponent<SpriteRenderer>().flipX)
                 curTarget.GetComponent<SpriteRenderer>().flipX = true;
@@ -177,6 +183,7 @@ public class GameManager : MonoBehaviour
 
     private void EnemyDamaged()
     {
+        playerBase.ChangeInvisibilityTime(-1);
         playerBase.CallEvents(curTarget.GetComponent<BaseObject>());
         if(curTarget.GetComponent<HealthComponent>().curHealth <= 0)
         {
@@ -186,13 +193,15 @@ public class GameManager : MonoBehaviour
         curTarget.GetComponent<Animator>().SetTrigger("Damage");
     }
 
-    private void UpdateUI()
+    public void UpdateUI()
     {
         scoretext.text = "Score: " + score.ToString();
+        PlayerMaxHP.text = "Max HP: " + player.GetComponent<HealthComponent>().maxHealth;
     }
 
     private void CombatEnd()
     {
+        UpdateUI();
         if(curTarget.GetComponent<HealthComponent>())
         {
             if(curTarget.GetComponent<HealthComponent>().curHealth <= 0)
@@ -221,9 +230,9 @@ public class GameManager : MonoBehaviour
     private void StartCombat(bool playerStart)
     {
         player.GetComponent<DamageEventPlayer>().SetDamage(player.GetComponent<HealthComponent>().curHealth);
-        if(curTarget.GetComponent<BaseObject>().oType == Type.enemy && !playerStart)
+        if(curTarget.GetComponent<BaseObject>().oType == Type.enemy && !playerStart && playerBase.InvisibilityTime <= 0)
             curTarget.GetComponent<BaseObject>().CallAnimationEvents();
-        else if(curTarget.GetComponent<BaseObject>().oType == Type.enemy && playerStart)
+        else if(curTarget.GetComponent<BaseObject>().oType == Type.enemy && (playerStart || playerBase.InvisibilityTime > 0))
         {
             playerAnimator.SetTrigger("Attack");
         }
@@ -293,6 +302,9 @@ public class GameManager : MonoBehaviour
             {
                 player.GetComponent<SpriteRenderer>().flipX = false;
             }
+
+            MoveOtherEnemies();
+
             StartCombat(pStart);
         });
 
@@ -310,6 +322,24 @@ public class GameManager : MonoBehaviour
 
         CreateCards(1);
 
+    }
+
+    private void MoveOtherEnemies()
+    {
+        List<Collider2D> result = new List<Collider2D>();
+        Physics2D.OverlapCollider(player.GetComponent<Collider2D>(), new ContactFilter2D().NoFilter(), result);
+        result.ForEach(c => {
+            if(c.gameObject != curTarget)
+            {
+                cards.Remove(c.gameObject);
+                c.GetComponent<SpriteRenderer>().material.DOFade(0, 0.75f).OnComplete(() => {Destroy(c.gameObject);});
+                try
+                {
+                    c.GetComponentInChildren<TextMeshPro>().DOFade(0, 0.75f);
+                }
+                catch{}
+            }
+        });
     }
 
     private void MurderLineDestroy()
