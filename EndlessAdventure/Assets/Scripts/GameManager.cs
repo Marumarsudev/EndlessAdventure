@@ -53,6 +53,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject RestartBtn;
     public GameObject MainMenuBtn;
+    public GameObject ResurrectBtn;
+
+    private Vector2 scoreOrigPos;
+    private Vector2 inventoryOrigPos;
 
     public SpriteRenderer fadescreen;
 
@@ -67,6 +71,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreOrigPos = scoretext.transform.position;
+        InAppPurchasing.PurchaseCompleted += PurchaseCompletedHandler;
+        InAppPurchasing.PurchaseFailed += PurchaseFailedHandler;
         itemChance = itemBaseChance;
         fadescreen.enabled = true;
         fadescreen.DOFade(0, 2.5f);
@@ -150,29 +157,62 @@ public class GameManager : MonoBehaviour
             curTarget.GetComponent<DestroySelfEvent>().ContinuePlay += CombatEnd;
     }
 
+    public void PlayerResurrection()
+    {
+        Advertising.DestroyBannerAd();
+        playerAnimator.SetTrigger("StandUp");
+        player.transform.DOMove(new Vector3(xOffset * (int)playerBase.lane, player.transform.position.y, 0), 0.5f, false);
+        player.GetComponent<HealthComponent>().TakeHealth(10, null, true);
+        scoretext.transform.DOMove(scoreOrigPos, 2.5f);
+        playerBase.inventory.GetComponent<Transform>().DOMove(inventoryOrigPos, 2.5f);
+        PlayerMaxHP.DOFade(1,2.5f);
+
+        fadescreen.DOFade(0f, 2.5f); 
+        MainMenuBtn.GetComponent<Image>().DOFade(0,2.5f).OnComplete(() => {
+            MainMenuBtn.SetActive(false);
+            RestartBtn.SetActive(false);
+            ResurrectBtn.SetActive(false);
+            playerBase.inventory.CanInteract = true;
+            canMove = true;
+            });
+        RestartBtn.GetComponent<Image>().DOFade(0,2.5f);
+        ResurrectBtn.GetComponent<Image>().DOFade(0,2.5f);
+        ResurrectBtn.GetComponentInChildren<TextMeshProUGUI>().DOFade(0,2.5f);
+        RestartBtn.GetComponentInChildren<TextMeshProUGUI>().DOFade(0,2.5f);
+        MainMenuBtn.GetComponentInChildren<TextMeshProUGUI>().DOFade(0,2.5f);
+        DiedText.DOFontSize(80, 2.5f);
+        DiedText.DOFade(0f, 2.5f);
+        curTarget.GetComponent<SpriteRenderer>().material.DOFade(0, 0.5f).OnComplete(() => {
+            cards.Remove(curTarget);
+            Destroy(curTarget.gameObject);
+        });
+    }
+
     private void PlayerDamaged()
     {
         playerAnimator.SetTrigger("Damage");
         curTarget.GetComponent<BaseObject>().CallEvents(playerBase);
         if(player.GetComponent<HealthComponent>().curHealth <= 0 || !player)
         {
-
             Advertising.ShowBannerAd(BannerAdPosition.Bottom);
-            Advertising.ShowInterstitialAd();
-            // if(Random.Range(0f, 1f) > 0.9f && Advertising.IsInterstitialAdReady())
-            // {
-            //     Advertising.ShowInterstitialAd();
-            // }
+            if(Random.Range(0f, 1f) > 0.9f && Advertising.IsInterstitialAdReady())
+            {
+                Advertising.ShowInterstitialAd();
+            }
             scoretext.transform.DOMove(new Vector3(0,1,0), 3f);
+            inventoryOrigPos = playerBase.inventory.GetComponent<Transform>().position;
             playerBase.inventory.GetComponent<Transform>().DOMoveY(-10, 3f);
             PlayerMaxHP.DOFade(0,2f);
             playerBase.inventory.CanInteract = false;
             fadescreen.DOFade(1f, 3f).OnComplete(() => {
                 RestartBtn.SetActive(true);
                 MainMenuBtn.SetActive(true);
+                ResurrectBtn.SetActive(true);
                 MainMenuBtn.GetComponent<Image>().DOFade(1,2f);
                 RestartBtn.GetComponent<Image>().DOFade(1,2f);
+                ResurrectBtn.GetComponent<Image>().DOFade(1,2f);
                 RestartBtn.GetComponentInChildren<TextMeshProUGUI>().DOFade(1,2f);
+                ResurrectBtn.GetComponentInChildren<TextMeshProUGUI>().DOFade(1,2f);
                 MainMenuBtn.GetComponentInChildren<TextMeshProUGUI>().DOFade(1,2f);
             });
             DiedText.DOFontSize(150, 3f);
@@ -182,7 +222,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScene(string scene)
     {
-        SceneManager.LoadScene(scene);
+        GameServices.ReportScore(score, EM_GameServicesConstants.Leaderboard_HiScores, (bool success) => {SceneManager.LoadScene(scene);});
     }
 
     private void AttackBack()
@@ -401,6 +441,31 @@ public class GameManager : MonoBehaviour
                 MoveCards((int)hit.collider.GetComponent<BaseObject>().lane, dir, hit.collider.gameObject);
             }
         }
+    }
+
+    public void PurchaseResurrection()
+    {
+        InAppPurchasing.Purchase(EM_IAPConstants.Product_Resurrection);
+    }
+
+    // Successful purchase handler
+    void PurchaseCompletedHandler(IAPProduct product)
+    {
+        // Compare product name to the generated name constants to determine which product was bought
+        switch (product.Name)
+        {
+            case EM_IAPConstants.Product_Resurrection:
+                Debug.Log("Sample_Product was purchased. The user should be granted it now.");
+                PlayerResurrection();
+                break;
+            // More products here...
+        }
+    }
+
+    // Failed purchase handler
+    void PurchaseFailedHandler(IAPProduct product)
+    {
+        Debug.Log("The purchase of product " + product.Name + " has failed.");
     }
 
     // Update is called once per frame

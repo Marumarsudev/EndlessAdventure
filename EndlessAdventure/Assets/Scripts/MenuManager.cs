@@ -5,6 +5,7 @@ using DG.Tweening;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using TMPro;
+using EasyMobile;
 
 public class MenuManager : MonoBehaviour
 {
@@ -45,15 +46,22 @@ public class MenuManager : MonoBehaviour
         MoveBG2();
     }
 
+    public void ShowLeaderBoards()
+    {
+        GameServices.ShowLeaderboardUI(EM_GameServicesConstants.Leaderboard_HiScores);
+    }
+
     public void MainMenuVisible(bool visible)
     {
         MainMenu.SetActive(visible);
     }
+    
     public void SettingsMenuVisible(bool visible)
     {
         SettingsMenu.SetActive(visible);
     }
-        public void CreditsVisible(bool visible)
+
+    public void CreditsVisible(bool visible)
     {
         Credits.SetActive(visible);
     }

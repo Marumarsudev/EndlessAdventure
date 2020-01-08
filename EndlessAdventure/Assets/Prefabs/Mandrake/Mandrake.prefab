@@ -56,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: a3a23579a0f72004caa673773e39e790, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116,6 +116,7 @@ MonoBehaviour:
   DeathAudio:
   - {fileID: 8300000, guid: 9747c0ff71f51ee4a81d0a6007ecd793, type: 3}
   - {fileID: 8300000, guid: 86f1cdd7d5e42b542a51632954c80356, type: 3}
+  InvisibilityTime: 0
 --- !u!114 &1312738640918164101
 MonoBehaviour:
   m_ObjectHideFlags: 0

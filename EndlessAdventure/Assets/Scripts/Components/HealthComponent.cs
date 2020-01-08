@@ -19,6 +19,8 @@ public class HealthComponent : MonoBehaviour
 
     public TextMeshPro statusText;
 
+    [SerializeField]
+    public bool destroyAfterDeath = true;
 
     public int halfDamageCount = 0;
 
@@ -84,9 +86,12 @@ public class HealthComponent : MonoBehaviour
         maxHealth += amount;
     }
 
-    public void TakeHealth(int heal, BaseObject attacker)
+    public void TakeHealth(int heal, BaseObject attacker, bool setHealth = false)
     {
-        curHealth += heal;
+        if(!setHealth)
+            curHealth += heal;
+        else
+            curHealth = heal;
 
         if (curHealth > maxHealth)
         {
@@ -117,7 +122,8 @@ public class HealthComponent : MonoBehaviour
 
     public void DestroySelf()
     {
-        Destroy(this.gameObject);
+        if(destroyAfterDeath)
+            Destroy(this.gameObject);
     }
 
 }

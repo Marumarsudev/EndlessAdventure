@@ -214,9 +214,16 @@ MonoBehaviour:
     mGpgsShouldRequestServerAuthCode: 0
     mGpgsForceRefreshServerAuthCode: 0
     mGpgsOauthScopes: []
-    mLeaderboards: []
+    mLeaderboards:
+    - _name: HiScores
+      _iosId: 
+      _androidId: CgkI4qzfjbwJEAIQAA
     mAchievements: []
-    mAndroidXmlResources: 
+    mAndroidXmlResources: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!--\r\nGoogle
+      Play game services IDs.\r\nSave this file as res/values/games-ids.xml in your
+      project.\r\n-->\r\n<resources>\r\n  <!-- app_id -->\r\n  <string name=\"app_id\"
+      translatable=\"false\">325372597858</string>\r\n  <!-- leaderboard HiScores
+      -->\r\n  <string name=\"leaderboard_hiscores\" translatable=\"false\">CgkI4qzfjbwJEAIQAA</string>\r\n</resources>\r\n"
     mEnableMultiplayer: 0
     mEnableSavedGames: 0
     mAutoConflictResolutionStrategy: 0
@@ -227,9 +234,17 @@ MonoBehaviour:
     mSimulateAppleAskToBuy: 0
     mInterceptApplePromotionalPurchases: 0
     mEnableAmazonSandboxTesting: 0
-    mValidateAppleReceipt: 1
-    mValidateGooglePlayReceipt: 1
-    mProducts: []
+    mValidateAppleReceipt: 0
+    mValidateGooglePlayReceipt: 0
+    mProducts:
+    - _name: Resurrection
+      _type: 0
+      _id: 0
+      _price: 0.99
+      _description: Died, but want to continue? This simple resurrection spell will
+        get you back on your feet in no time!
+      _storeSpecificIds: []
+      _isEditingAdvanced: 1
   mNotificationSettings:
     mAutoInit: 1
     mAutoInitDelay: 0
@@ -262,7 +277,14 @@ MonoBehaviour:
       mContent: 
       mTitle: Privacy Consent
       mToggles: []
-      mActionButtons: []
+      mActionButtons:
+      - id: 
+        title: 
+        interactable: 0
+        titleColor: {r: 0, g: 0, b: 0, a: 0}
+        backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+        uninteractableTitleColor: {r: 0, g: 0, b: 0, a: 0}
+        uninteractableBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
     mConsentDialogComposerSettings:
       mToggleSelectedIndex: 0
       mButtonSelectedIndex: 0
@@ -322,9 +344,9 @@ MonoBehaviour:
       - mKey: NSContactsUsageDescription
         mValue: '[Your usage description]'
   mIsAdModuleEnable: 1
-  mIsIAPModuleEnable: 0
-  mIsGameServiceModuleEnable: 0
+  mIsIAPModuleEnable: 1
+  mIsGameServiceModuleEnable: 1
   mIsNotificationModuleEnable: 0
   mIsSharingModuleEnable: 0
-  mActiveModuleIndex: 0
+  mActiveModuleIndex: 3
   mIsSelectingModule: 0
