@@ -222,7 +222,10 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScene(string scene)
     {
-        GameServices.ReportScore(score, EM_GameServicesConstants.Leaderboard_HiScores, (bool success) => {SceneManager.LoadScene(scene);});
+        GameServices.ReportScore(score, EM_GameServicesConstants.Leaderboard_HiScores, (bool success) => {
+            Advertising.DestroyBannerAd();
+            SceneManager.LoadScene(scene);
+            });
     }
 
     private void AttackBack()
