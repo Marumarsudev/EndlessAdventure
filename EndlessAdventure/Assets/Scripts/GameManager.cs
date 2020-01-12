@@ -60,6 +60,8 @@ public class GameManager : MonoBehaviour
 
     public SpriteRenderer fadescreen;
 
+    private int CreateItemOnRowcount;
+
     void Awake()
     {
         if(!RuntimeManager.IsInitialized())
@@ -71,6 +73,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CreateItemOnRowcount = Random.Range(0,1);
         scoreOrigPos = scoretext.transform.position;
         InAppPurchasing.PurchaseCompleted += PurchaseCompletedHandler;
         InAppPurchasing.PurchaseFailed += PurchaseFailedHandler;
@@ -89,12 +92,12 @@ public class GameManager : MonoBehaviour
     {
         difficulty += 0.01f;
         if (difficulty >= 0.35f)
-            difficulty = 0.35f;
+            difficulty = 0.60f;
         for (int i = 0; i < rows; i++)
         {
             if(rowCount == 10) // Spwan Bossss!!!
             {
-                rowCount = 0;
+                rowCount = -1;
                 GameObject temp = Instantiate(EnemiesB[Random.Range(0, EnemiesB.Count)], new Vector3(0, yOffset * -i + 7.5f, 0), Quaternion.identity);
                 BaseObject tempBase = temp.GetComponent<BaseObject>();
                 tempBase.lane = (Lane)0;
@@ -103,23 +106,24 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                for (int j = -1; j < 3 -1; j++)
+                bool ItemSpawned = false;
+                int spawnItemOnLane = Random.Range(-1,1);
+                Debug.Log("ItemLane: " + spawnItemOnLane);
+                for (int j = -1; j < 3 -1; j++) //holy shit that's confusing, so basically spawn an object on spot -1, 0 or 1. wtf :,;DD
                 {
                     float rand = Random.Range(0f, 1f);
                     GameObject temp;
-                    if(rand > itemChance)
+                    
+                    if(rowCount == CreateItemOnRowcount && ItemSpawned == false && j == spawnItemOnLane)
                     {
-                        itemChance += itemChanceAdd;
-                        rand = Random.Range(0f, 1f);
-                        if(rand > 0.99f - difficulty)
-                            temp = Instantiate(EnemiesH[Random.Range(0, EnemiesH.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
-                        else if(rand > 0.66f - difficulty)
-                            temp = Instantiate(EnemiesM[Random.Range(0, EnemiesM.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
-                        else
-                            temp = Instantiate(EnemiesE[Random.Range(0, EnemiesE.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
-                    }
-                    else
-                    {
+                        Debug.Log("Count:" + rowCount);
+                        Debug.Log("Create:" + CreateItemOnRowcount);
+                        
+                        CreateItemOnRowcount = Random.Range(rowCount+2, rowCount+3);
+                        if(CreateItemOnRowcount >= 10)
+                            CreateItemOnRowcount -= 10;
+
+                        ItemSpawned = true;
                         itemChance = itemBaseChance;
                         rand = Random.Range(0f, 1f);
                         if(rand > 0.90f)
@@ -130,6 +134,17 @@ public class GameManager : MonoBehaviour
                             temp = Instantiate(ItemsUC[Random.Range(0, ItemsUC.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
                         else
                             temp = Instantiate(ItemsC[Random.Range(0, ItemsC.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
+                    }
+                    else
+                    {
+                        itemChance += itemChanceAdd;
+                        rand = Random.Range(0f, 1f);
+                        if(rand > 0.99f - difficulty)
+                            temp = Instantiate(EnemiesH[Random.Range(0, EnemiesH.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
+                        else if(rand > 0.66f - difficulty)
+                            temp = Instantiate(EnemiesM[Random.Range(0, EnemiesM.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
+                        else
+                            temp = Instantiate(EnemiesE[Random.Range(0, EnemiesE.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
                     }
 
                     BaseObject tempBase = temp.GetComponent<BaseObject>();
@@ -194,6 +209,7 @@ public class GameManager : MonoBehaviour
         curTarget.GetComponent<BaseObject>().CallEvents(playerBase);
         if(player.GetComponent<HealthComponent>().curHealth <= 0 || !player)
         {
+            ChangeEndButtonStatus(true);
             Advertising.ShowBannerAd(BannerAdPosition.Bottom);
             if(Random.Range(0f, 1f) > 0.9f && Advertising.IsInterstitialAdReady())
             {
@@ -218,6 +234,13 @@ public class GameManager : MonoBehaviour
             DiedText.DOFontSize(150, 3f);
             DiedText.DOFade(1f, 2.5f);
         }
+    }
+
+    public void ChangeEndButtonStatus(bool enabled)
+    {
+        RestartBtn.GetComponent<Button>().enabled = enabled;
+        MainMenuBtn.GetComponent<Button>().enabled = enabled;
+        ResurrectBtn.GetComponent<Button>().enabled = enabled;
     }
 
     public void ChangeScene(string scene)

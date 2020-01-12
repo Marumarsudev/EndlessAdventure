@@ -23,6 +23,7 @@ ExportedObj/
 *.svd
 *.pdb
 *.opendb
+*.keystore
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -32,5 +33,6 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
+*.abb
 *.apk
 *.unitypackage
