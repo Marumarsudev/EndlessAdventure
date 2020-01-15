@@ -61,7 +61,7 @@ MonoBehaviour:
         mAndroidId: ca-app-pub-8755286476145066/4516801020
       mDefaultRewardedAdId:
         mIosId: 
-        mAndroidId: 
+        mAndroidId: ca-app-pub-8755286476145066/3598141459
       mCustomBannerAdIds:
         keys: []
         values: []
@@ -206,9 +206,9 @@ MonoBehaviour:
         values: []
       mEnableTestMode: 0
   mGameServiceSettings:
-    mAutoInit: 1
+    mAutoInit: 0
     mAutoInitDelay: 0
-    mAndroidMaxLoginRequests: 3
+    mAndroidMaxLoginRequests: 0
     mGpgsDebugLogEnabled: 0
     mGpgsPopupGravity: 0
     mGpgsShouldRequestServerAuthCode: 0
@@ -349,5 +349,5 @@ MonoBehaviour:
   mIsGameServiceModuleEnable: 1
   mIsNotificationModuleEnable: 0
   mIsSharingModuleEnable: 0
-  mActiveModuleIndex: 1
+  mActiveModuleIndex: 0
   mIsSelectingModule: 0

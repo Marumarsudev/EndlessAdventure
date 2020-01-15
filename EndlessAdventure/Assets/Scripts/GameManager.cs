@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
 
     private int CreateItemOnRowcount;
 
+    private string resurrectionPrice;
+
     void Awake()
     {
         if(!RuntimeManager.IsInitialized())
@@ -73,8 +75,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        resurrectionPrice = "NA";
         CreateItemOnRowcount = Random.Range(0,1);
         scoreOrigPos = scoretext.transform.position;
+
+        Advertising.RewardedAdCompleted += RewardedAdCompletedHandler;
+        Advertising.RewardedAdSkipped += RewardedAdSkippedHandler;
+
         InAppPurchasing.PurchaseCompleted += PurchaseCompletedHandler;
         InAppPurchasing.PurchaseFailed += PurchaseFailedHandler;
         itemChance = itemBaseChance;
@@ -107,7 +114,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 bool ItemSpawned = false;
-                int spawnItemOnLane = Random.Range(-1,1);
+                int spawnItemOnLane = Random.Range(-1,2);
                 Debug.Log("ItemLane: " + spawnItemOnLane);
                 for (int j = -1; j < 3 -1; j++) //holy shit that's confusing, so basically spawn an object on spot -1, 0 or 1. wtf :,;DD
                 {
@@ -174,11 +181,16 @@ public class GameManager : MonoBehaviour
 
     public void PlayerResurrection()
     {
+        ChangeEndButtonStatus(false);
         Advertising.DestroyBannerAd();
         playerAnimator.SetTrigger("StandUp");
         player.transform.DOMove(new Vector3(xOffset * (int)playerBase.lane, player.transform.position.y, 0), 0.5f, false);
         player.GetComponent<HealthComponent>().TakeHealth(10, null, true);
-        scoretext.transform.DOMove(scoreOrigPos, 2.5f);
+        scoretext.DOFade(0,1.25f).OnComplete(() => {
+                //scoretext.transform.DOMove(new Vector3(0,1.25f,0), 0f);
+                scoretext.transform.position = scoreOrigPos;
+                scoretext.DOFade(1,1.25f);
+                });
         playerBase.inventory.GetComponent<Transform>().DOMove(inventoryOrigPos, 2.5f);
         PlayerMaxHP.DOFade(1,2.5f);
 
@@ -215,7 +227,11 @@ public class GameManager : MonoBehaviour
             {
                 Advertising.ShowInterstitialAd();
             }
-            scoretext.transform.DOMove(new Vector3(0,1,0), 3f);
+            scoretext.DOFade(0,1.25f).OnComplete(() => {
+                //scoretext.transform.DOMove(new Vector3(0,1.25f,0), 0f);
+                scoretext.transform.position = new Vector3(0,1.25f,0);
+                scoretext.DOFade(1,1.25f);
+                });
             inventoryOrigPos = playerBase.inventory.GetComponent<Transform>().position;
             playerBase.inventory.GetComponent<Transform>().DOMoveY(-10, 3f);
             PlayerMaxHP.DOFade(0,2f);
@@ -255,10 +271,8 @@ public class GameManager : MonoBehaviour
     {
         if(curTarget.GetComponent<HealthComponent>().curHealth > 0 && playerBase.InvisibilityTime <= 0)
         {
-            if(!curTarget.GetComponent<SpriteRenderer>().flipX)
-                curTarget.GetComponent<SpriteRenderer>().flipX = true;
-            else
-                curTarget.GetComponent<SpriteRenderer>().flipX = false;
+            if(curTarget.GetComponent<SpriteRenderer>().flipX != player.GetComponent<SpriteRenderer>().flipX)
+                curTarget.GetComponent<SpriteRenderer>().flipX = !curTarget.GetComponent<SpriteRenderer>().flipX;
             curTarget.GetComponent<BaseObject>().CallAnimationEvents();
         }
         else if(curTarget.GetComponent<HealthComponent>().curHealth > 0 && playerBase.InvisibilityTime > 0)
@@ -469,9 +483,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Event handler called when a rewarded ad has completed
+    void RewardedAdCompletedHandler(RewardedAdNetwork network, AdPlacement placement)
+    {
+        PlayerResurrection();
+        Debug.Log("Rewarded ad has completed. The user should be rewarded now.");
+    }
+
+    // Event handler called when a rewarded ad has been skipped
+    void RewardedAdSkippedHandler(RewardedAdNetwork network, AdPlacement placement)
+    {
+        ChangeEndButtonStatus(true);
+        Debug.Log("Rewarded ad was skipped. The user should NOT be rewarded.");
+    }
+
     public void PurchaseResurrection()
     {
-        InAppPurchasing.Purchase(EM_IAPConstants.Product_Resurrection);
+        #if UNITY_EDITOR
+            PlayerResurrection();
+        #else
+        if(Advertising.IsRewardedAdReady())
+        {
+            Advertising.ShowRewardedAd();
+        }
+        #endif
     }
 
     // Successful purchase handler
@@ -491,6 +526,7 @@ public class GameManager : MonoBehaviour
     // Failed purchase handler
     void PurchaseFailedHandler(IAPProduct product)
     {
+        ChangeEndButtonStatus(true);
         Debug.Log("The purchase of product " + product.Name + " has failed.");
     }
 

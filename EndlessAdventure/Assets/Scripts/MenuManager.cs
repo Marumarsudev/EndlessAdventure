@@ -32,6 +32,10 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(!GameServices.IsInitialized())
+        {
+            GameServices.ManagedInit();
+        }
         if(LocalSaveHandler.LoadData("LocalSaveData") != null)
         {
             saveData = LocalSaveHandler.LoadData("LocalSaveData") as LocalSaveData;
@@ -48,7 +52,12 @@ public class MenuManager : MonoBehaviour
 
     public void ShowLeaderBoards()
     {
-        GameServices.ShowLeaderboardUI(EM_GameServicesConstants.Leaderboard_HiScores);
+        if(GameServices.IsInitialized())
+            GameServices.ShowLeaderboardUI(EM_GameServicesConstants.Leaderboard_HiScores);
+        else
+        {
+            GameServices.Init();
+        }
     }
 
     public void MainMenuVisible(bool visible)
