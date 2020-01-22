@@ -46,6 +46,8 @@ public class BaseObject : MonoBehaviour
 
     private bool isInvisible = false;
 
+    public bool isBackStab = false;
+
     public void ChangeInvisibilityTime(int amount)
     {
         InvisibilityTime += amount;

@@ -32,6 +32,8 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fade.color = Color.black;
+        fade.DOFade(0, 0.75f).SetEase(Ease.OutCubic);
         if(!GameServices.IsInitialized())
         {
             GameServices.ManagedInit();
@@ -135,6 +137,11 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         fade.DOFade(1, 0.75f).SetEase(Ease.OutCubic).OnComplete(() => {SceneManager.LoadScene("MainScene");});
+    }
+
+    public void UpgradeMenu()
+    {
+        fade.DOFade(1, 0.75f).SetEase(Ease.OutCubic).OnComplete(() => {SceneManager.LoadScene("UpgradeMenu");});
     }
 
     private void MoveBG1()

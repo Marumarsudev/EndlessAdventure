@@ -6,9 +6,10 @@ using TMPro;
 public class HealthComponent : MonoBehaviour
 {
     public int maxHealth;
-    [SerializeField]
-    private int startingHealth;
+    public int startingHealth;
     public int curHealth;
+
+    public int damage;
 
     public List<Event> deathEvents = new List<Event>();
 
@@ -101,10 +102,10 @@ public class HealthComponent : MonoBehaviour
         UpdateUI();
     }
 
-    private void UpdateUI()
+    public void UpdateUI()
     {
         if(curHealth > 0)
-            statusText.text = $"{curHealth.ToString()}";
+            statusText.text = $"{damage.ToString()}/{curHealth.ToString()}";
         else
             statusText.text = "";
     }

@@ -135,11 +135,13 @@ MonoBehaviour:
   maxHealth: 20
   startingHealth: 10
   curHealth: 0
+  damage: 5
   deathEvents: []
   effectEvents:
   - {fileID: 4609979825958166248}
   effectRate: 0
   statusText: {fileID: 4262335821016409050}
+  destroyAfterDeath: 1
   halfDamageCount: 0
 --- !u!114 &4609979825958166248
 MonoBehaviour:
@@ -448,8 +450,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: X/X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61c71a4b6d1763049ac42994aa80ae30, type: 2}
@@ -554,10 +554,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Effect
       objectReference: {fileID: 0}
-    - target: {fileID: 9524544, guid: e0e040ae8552dc24f85d90275a90275c, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: b3f1efdbb6ada17419af79e8f92b3ea2, type: 2}
     - target: {fileID: 462288, guid: e0e040ae8552dc24f85d90275a90275c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -610,6 +606,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9524544, guid: e0e040ae8552dc24f85d90275a90275c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b3f1efdbb6ada17419af79e8f92b3ea2, type: 2}
     - target: {fileID: 21291934, guid: e0e040ae8552dc24f85d90275a90275c, type: 3}
       propertyPath: m_Size.y
       value: 4

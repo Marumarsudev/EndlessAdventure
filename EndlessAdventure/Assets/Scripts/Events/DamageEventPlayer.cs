@@ -8,7 +8,8 @@ public class DamageEventPlayer : Event
 
     public void SetDamage(int dmg)
     {
-        damage = dmg;
+        //damage = dmg;
+        damage = GetComponent<HealthComponent>().damage;
     }
 
     public override void CallEvent(BaseObject target)
@@ -16,7 +17,15 @@ public class DamageEventPlayer : Event
         try
         {
             GetComponent<BaseObject>().PlayAttackClip();
-            target.GetComponent<HealthComponent>().TakeDamage(damage, GetComponent<BaseObject>());
+            if(GetComponent<BaseObject>().isBackStab)
+            {
+                target.GetComponent<HealthComponent>().TakeDamage(damage * 2, GetComponent<BaseObject>());
+                GetComponent<BaseObject>().isBackStab = false;
+            }
+            else
+            {
+                target.GetComponent<HealthComponent>().TakeDamage(damage, GetComponent<BaseObject>());
+            }
         }
         catch
         {

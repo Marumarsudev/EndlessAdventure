@@ -128,13 +128,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fccd766e4ccd524bbad3e8bd0c7496a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  startingHealth: 10
+  maxHealth: 7
+  startingHealth: 7
   curHealth: 0
+  damage: 10
   deathEvents: []
   effectEvents: []
   effectRate: 0
   statusText: {fileID: 7675803257862880161}
+  destroyAfterDeath: 1
   halfDamageCount: 0
 --- !u!61 &-1050732909884578507
 BoxCollider2D:
@@ -413,8 +415,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: X/X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 61c71a4b6d1763049ac42994aa80ae30, type: 2}

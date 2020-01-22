@@ -38,7 +38,6 @@ public class Inventory : MonoBehaviour
     {
         playerBase = player.GetComponent<BaseObject>();
         origpos = GetComponent<RectTransform>().localPosition;
-        OpenCloseInventory();
     }
 
 

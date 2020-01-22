@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public float yOffset = 1.75f;
     public float xOffset = 1.5f;
     private List<GameObject> cards = new List<GameObject>();
+    private List<GameObject> temp = new List<GameObject>();
+
 
     public List<GameObject> EnemiesB = new List<GameObject>();
     public List<GameObject> EnemiesE = new List<GameObject>();
@@ -64,6 +66,12 @@ public class GameManager : MonoBehaviour
 
     private string resurrectionPrice;
 
+    private bool resurrectionUsed = false;
+
+    private int steps;
+
+    SaveData playerSave;
+
     void Awake()
     {
         if(!RuntimeManager.IsInitialized())
@@ -75,6 +83,24 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        playerBase = player.GetComponent<BaseObject>();
+        
+        if(LocalSaveHandler.LoadData("PlayerSaveData") != null)
+        {
+            playerSave = LocalSaveHandler.LoadData("PlayerSaveData") as SaveData;
+            playerBase.GetComponent<HealthComponent>().maxHealth = playerSave.playerMaxDefence;
+            playerBase.GetComponent<HealthComponent>().startingHealth = playerSave.playerStartDefence;
+            playerBase.GetComponent<HealthComponent>().curHealth = playerSave.playerStartDefence;
+            playerBase.GetComponent<HealthComponent>().damage = playerSave.playerAttack;
+            playerBase.GetComponent<HealthComponent>().UpdateUI();
+        }
+        else
+        {
+            playerSave = new SaveData(null);
+        }
+
+        steps = 0;
         resurrectionPrice = "NA";
         CreateItemOnRowcount = Random.Range(0,1);
         scoreOrigPos = scoretext.transform.position;
@@ -88,7 +114,6 @@ public class GameManager : MonoBehaviour
         fadescreen.enabled = true;
         fadescreen.DOFade(0, 2.5f);
         playerAnimator = player.GetComponent<Animator>();
-        playerBase = player.GetComponent<BaseObject>();
         playerBase.Attack += EnemyDamaged;
         playerBase.AttackEnd += CombatEnd;
         CreateCards(5);
@@ -97,6 +122,8 @@ public class GameManager : MonoBehaviour
 
     private void CreateCards(int rows)
     {
+        int buff = Mathf.FloorToInt(steps / 20);
+
         difficulty += 0.01f;
         if (difficulty >= 0.35f)
             difficulty = 0.60f;
@@ -109,6 +136,11 @@ public class GameManager : MonoBehaviour
                 BaseObject tempBase = temp.GetComponent<BaseObject>();
                 tempBase.lane = (Lane)0;
                 tempBase.SetLookDirection(Random.Range(0f,1f) >= 0.5 ? -1 : 1);
+                tempBase.GetComponent<HealthComponent>().damage += buff;
+                tempBase.GetComponent<HealthComponent>().maxHealth += buff;
+                tempBase.GetComponent<HealthComponent>().startingHealth += buff;
+                tempBase.GetComponent<HealthComponent>().curHealth += buff;
+                tempBase.GetComponent<HealthComponent>().UpdateUI();
                 cards.Add(temp);
             }
             else
@@ -121,10 +153,10 @@ public class GameManager : MonoBehaviour
                     float rand = Random.Range(0f, 1f);
                     GameObject temp;
                     
-                    if(rowCount == CreateItemOnRowcount && ItemSpawned == false && j == spawnItemOnLane)
+                    if(rowCount == CreateItemOnRowcount && ItemSpawned == false && j == spawnItemOnLane)  // Create an item.
                     {
-                        Debug.Log("Count:" + rowCount);
-                        Debug.Log("Create:" + CreateItemOnRowcount);
+                        // Debug.Log("Count:" + rowCount);
+                        // Debug.Log("Create:" + CreateItemOnRowcount);
                         
                         CreateItemOnRowcount = Random.Range(rowCount+2, rowCount+3);
                         if(CreateItemOnRowcount >= 10)
@@ -142,7 +174,7 @@ public class GameManager : MonoBehaviour
                         else
                             temp = Instantiate(ItemsC[Random.Range(0, ItemsC.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
                     }
-                    else
+                    else // Create an enemy
                     {
                         itemChance += itemChanceAdd;
                         rand = Random.Range(0f, 1f);
@@ -152,6 +184,12 @@ public class GameManager : MonoBehaviour
                             temp = Instantiate(EnemiesM[Random.Range(0, EnemiesM.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
                         else
                             temp = Instantiate(EnemiesE[Random.Range(0, EnemiesE.Count)], new Vector3(xOffset * j, yOffset * -i + 7.5f, 0), Quaternion.identity);
+                    
+                        temp.GetComponent<HealthComponent>().damage += buff;
+                        temp.GetComponent<HealthComponent>().maxHealth += buff;
+                        temp.GetComponent<HealthComponent>().startingHealth += buff;
+                        temp.GetComponent<HealthComponent>().curHealth += buff;
+                        temp.GetComponent<HealthComponent>().UpdateUI();
                     }
 
                     BaseObject tempBase = temp.GetComponent<BaseObject>();
@@ -185,7 +223,7 @@ public class GameManager : MonoBehaviour
         Advertising.DestroyBannerAd();
         playerAnimator.SetTrigger("StandUp");
         player.transform.DOMove(new Vector3(xOffset * (int)playerBase.lane, player.transform.position.y, 0), 0.5f, false);
-        player.GetComponent<HealthComponent>().TakeHealth(10, null, true);
+        player.GetComponent<HealthComponent>().TakeHealth(playerSave.playerStartDefence, null, true);
         scoretext.DOFade(0,1.25f).OnComplete(() => {
                 //scoretext.transform.DOMove(new Vector3(0,1.25f,0), 0f);
                 scoretext.transform.position = scoreOrigPos;
@@ -221,6 +259,7 @@ public class GameManager : MonoBehaviour
         curTarget.GetComponent<BaseObject>().CallEvents(playerBase);
         if(player.GetComponent<HealthComponent>().curHealth <= 0 || !player)
         {
+            LocalSaveHandler.SaveData(playerSave, "PlayerSaveData");
             ChangeEndButtonStatus(true);
             Advertising.ShowBannerAd(BannerAdPosition.Bottom);
             if(Random.Range(0f, 1f) > 0.9f && Advertising.IsInterstitialAdReady())
@@ -229,7 +268,7 @@ public class GameManager : MonoBehaviour
             }
             scoretext.DOFade(0,1.25f).OnComplete(() => {
                 //scoretext.transform.DOMove(new Vector3(0,1.25f,0), 0f);
-                scoretext.transform.position = new Vector3(0,1.25f,0);
+                scoretext.transform.position = new Vector3(0,1f,0);
                 scoretext.DOFade(1,1.25f);
                 });
             inventoryOrigPos = playerBase.inventory.GetComponent<Transform>().position;
@@ -239,13 +278,17 @@ public class GameManager : MonoBehaviour
             fadescreen.DOFade(1f, 3f).OnComplete(() => {
                 RestartBtn.SetActive(true);
                 MainMenuBtn.SetActive(true);
-                ResurrectBtn.SetActive(true);
                 MainMenuBtn.GetComponent<Image>().DOFade(1,2f);
                 RestartBtn.GetComponent<Image>().DOFade(1,2f);
-                ResurrectBtn.GetComponent<Image>().DOFade(1,2f);
                 RestartBtn.GetComponentInChildren<TextMeshProUGUI>().DOFade(1,2f);
-                ResurrectBtn.GetComponentInChildren<TextMeshProUGUI>().DOFade(1,2f);
                 MainMenuBtn.GetComponentInChildren<TextMeshProUGUI>().DOFade(1,2f);
+
+                if(resurrectionUsed == false)
+                {
+                    ResurrectBtn.SetActive(true);
+                    ResurrectBtn.GetComponent<Image>().DOFade(1,2f);
+                    ResurrectBtn.GetComponentInChildren<TextMeshProUGUI>().DOFade(1,2f);
+                }
             });
             DiedText.DOFontSize(150, 3f);
             DiedText.DOFade(1f, 2.5f);
@@ -261,7 +304,8 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScene(string scene)
     {
-        GameServices.ReportScore(score, EM_GameServicesConstants.Leaderboard_HiScores, (bool success) => {
+        LocalSaveHandler.SaveData(playerSave, "PlayerSaveData");
+        GameServices.ReportScore(steps, EM_GameServicesConstants.Leaderboard_HiScores, (bool success) => {
             Advertising.DestroyBannerAd();
             SceneManager.LoadScene(scene);
             });
@@ -287,7 +331,7 @@ public class GameManager : MonoBehaviour
         playerBase.CallEvents(curTarget.GetComponent<BaseObject>());
         if(curTarget.GetComponent<HealthComponent>().curHealth <= 0)
         {
-            score += curTarget.GetComponent<HealthComponent>().maxHealth;
+            playerSave.gold += curTarget.GetComponent<HealthComponent>().maxHealth;
             UpdateUI();
         }
         curTarget.GetComponent<Animator>().SetTrigger("Damage");
@@ -295,7 +339,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        scoretext.text = "Score: " + score.ToString();
+        scoretext.text = "Gold : " + playerSave.gold.ToString() + "\n<size=60%>Steps : " + steps;
         PlayerMaxHP.text = "Max HP: " + player.GetComponent<HealthComponent>().maxHealth;
     }
 
@@ -346,17 +390,21 @@ public class GameManager : MonoBehaviour
 
     private void MoveCards(int lane, float dir, GameObject target)
     {
+        steps++;
+        UpdateUI();
         playerBase.inventory.CanInteract = false;
         pStart = false;
         canMove = false;
         float spacing = (float)lane * -0.75f;
         if(playerBase.lane == Lane.left && lane == 0 && target.GetComponent<SpriteRenderer>().flipX)
         {
+            playerBase.isBackStab = true;
             spacing =  -0.75f;
             pStart = true;
         }
         else if(playerBase.lane == Lane.right && lane == 0 && !target.GetComponent<SpriteRenderer>().flipX)
         {
+            playerBase.isBackStab = true;
             spacing =  0.75f;
             pStart = true;
         }
@@ -411,6 +459,8 @@ public class GameManager : MonoBehaviour
             StartCombat(pStart);
         });
 
+        temp.Clear();
+
         foreach (GameObject o in cards)
         {
             try
@@ -419,9 +469,14 @@ public class GameManager : MonoBehaviour
             }
             catch
             {
+                temp.Add(o.gameObject);
                 Debug.Log("He was already gone.");
             }
         }
+
+        temp.ForEach(o => {
+            cards.Remove(o);
+        });
 
         CreateCards(1);
 
@@ -487,6 +542,7 @@ public class GameManager : MonoBehaviour
     void RewardedAdCompletedHandler(RewardedAdNetwork network, AdPlacement placement)
     {
         PlayerResurrection();
+        resurrectionUsed = true;
         Debug.Log("Rewarded ad has completed. The user should be rewarded now.");
     }
 
@@ -501,6 +557,7 @@ public class GameManager : MonoBehaviour
     {
         #if UNITY_EDITOR
             PlayerResurrection();
+            resurrectionUsed = true;
         #else
         if(Advertising.IsRewardedAdReady())
         {
